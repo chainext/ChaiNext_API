@@ -14,7 +14,7 @@ API访问地址：
 |基本指数行情|[https://api.chainext.io/v1/index_basic](#index_basic)|GET|获取指数的基本行情|
 |权重|[https://api.chainext.io/v1/weight](#weight)|GET|获取指数的权重信息|
 |指数列表|[https://api.chainext.io/v1/index_list](#index_list)|GET|获取指数列表信息|
-|指数表现|[https://api.chainext.io/v1/index_detail](#v1/index_detail)|GET|获取指数在指定时段段内的表现相关信息|
+|指数表现|[https://api.chainext.io/v1/index_detail](#index_detail)|GET|获取指数在指定时段段内的表现相关信息|
 |K线图|[https://api.chainext.io/v1/kchart](#kchart)|GET|获取指数K线图|
 |指数CID映射表|[https://api.chainext.io/v1/mapping_list](#mapping_list)|GET|获取指数CID与指数名称的相关说明|
 |单币CID映射表|[https://api.chainext.io/v1/coin_mapping_list](#coin_mapping_list)|GET|获取单币CID与单币名称的相关说明|
