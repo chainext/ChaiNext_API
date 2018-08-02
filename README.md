@@ -8,7 +8,7 @@ API访问地址：
 ## API 接口说明
 | 接口数据类型 | 请求方法 | 类型     | 描述  |
 | ------------ | ----- | ------ | ----- |
-|基本指数行情|[https://api.chainext.io/v1/index_basic](#v1/index_basic)|GET|获取指数的基本行情|
+|基本指数行情|[https://api.chainext.io/v1/index_basic](#index_basic)|GET|获取指数的基本行情|
 |权重|[https://api.chainext.io/v1/weight](#v1/weight)|GET|获取指数的权重信息|
 |指数列表|[https://api.chainext.io/v1/index_list](#v1/index_list)|GET|获取指数列表信息|
 |指数表现|[https://api.chainext.io/v1/index_detail](#v1/index_detail)|GET|获取指数在指定时段段内的表现相关信息|
@@ -22,7 +22,7 @@ API访问地址：
 |代币大额转账报警|[https://api.chainext.io/v1/largement_alert](#v1/largement_alert)|GET|获取代币大额转账报警信息|
 
 
-#### v1/index_basic 
+#### index_basic 
 
 获取基本指数行情
   
