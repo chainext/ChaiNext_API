@@ -3,23 +3,26 @@
 ## REST API 简介
 ChaiNext为用户提供了一套行情查询的API接口，帮助用户实时了解行情。
 API访问地址：
+
 国内用户请访问：[https://api.chainext.cn/v1](https://api.chainext.io/v1)
+
 海外用户请访问：[https://api.chainext.io/v1](https://api.chainext.io/v1)
+
 ## API 接口说明
 | 接口数据类型 | 请求方法 | 类型     | 描述  |
 | ------------ | ----- | ------ | ----- |
 |基本指数行情|[https://api.chainext.io/v1/index_basic](#index_basic)|GET|获取指数的基本行情|
-|权重|[https://api.chainext.io/v1/weight](#v1/weight)|GET|获取指数的权重信息|
-|指数列表|[https://api.chainext.io/v1/index_list](#v1/index_list)|GET|获取指数列表信息|
+|权重|[https://api.chainext.io/v1/weight](#weight)|GET|获取指数的权重信息|
+|指数列表|[https://api.chainext.io/v1/index_list](#index_list)|GET|获取指数列表信息|
 |指数表现|[https://api.chainext.io/v1/index_detail](#v1/index_detail)|GET|获取指数在指定时段段内的表现相关信息|
-|K线图|[https://api.chainext.io/v1/kchart](#v1/kchart)|GET|获取指数K线图|
-|指数CID映射表|[https://api.chainext.io/v1/mapping_list](#v1/mapping_list)|GET|获取指数CID与指数名称的相关说明|
-|单币CID映射表|[https://api.chainext.io/v1/coin_mapping_list](#v1/coin_mapping_list)|GET|获取单币CID与单币名称的相关说明|
-|微信每日播报|[https://api.chainext.io/v1/wechat_broadcast](#v1/wechat_broadcast)|GET|获取每日播报信息|
-|微信整点播报|[https://api.chainext.io/v1/wechat_hour_broadcast](#v1/wechat_hour_broadcast)|GET|获取整点播报信息|
-|微信分钟级监控|[https://api.chainext.io/v1/wechat_monitor_min](#v1/wechat_monitor_min)|GET|获取指数分钟级监控信息|
-|微信小时级监控|[https://api.chainext.io/v1/wechat_monitor_24h](#v1/wechat_monitor_24h)|GET|以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息|
-|代币大额转账报警|[https://api.chainext.io/v1/largement_alert](#v1/largement_alert)|GET|获取代币大额转账报警信息|
+|K线图|[https://api.chainext.io/v1/kchart](#kchart)|GET|获取指数K线图|
+|指数CID映射表|[https://api.chainext.io/v1/mapping_list](#mapping_list)|GET|获取指数CID与指数名称的相关说明|
+|单币CID映射表|[https://api.chainext.io/v1/coin_mapping_list](#coin_mapping_list)|GET|获取单币CID与单币名称的相关说明|
+|微信每日播报|[https://api.chainext.io/v1/wechat_broadcast](#wechat_broadcast)|GET|获取每日播报信息|
+|微信整点播报|[https://api.chainext.io/v1/wechat_hour_broadcast](#wechat_hour_broadcast)|GET|获取整点播报信息|
+|微信分钟级监控|[https://api.chainext.io/v1/wechat_monitor_min](#wechat_monitor_min)|GET|获取指数分钟级监控信息|
+|微信小时级监控|[https://api.chainext.io/v1/wechat_monitor_24h](#wechat_monitor_24h)|GET|以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息|
+|代币大额转账报警|[https://api.chainext.io/v1/largement_alert](#largement_alert)|GET|获取代币大额转账报警信息|
 
 
 #### index_basic 
@@ -74,7 +77,10 @@ API访问地址：
 }
 ```
 
-#### <span id="v1/weight"> GET /weight 获取指数的权重信息
+#### weight 
+
+获取指数的权重信息
+
 请求参数: 
 
 | 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
@@ -110,7 +116,10 @@ API访问地址：
 }
 ```
 
-#### <span id="v1/index_list"> GET /index_list 获取指数列表信息
+#### index_list 
+
+获取指数列表信息
+
 请求参数: 
 
 | 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
@@ -162,7 +171,9 @@ API访问地址：
           }
         }
 ```
-#### <span id="v1/index_detail"> GET /index_detail 获取指数表现相关信息
+#### index_detail 
+
+获取指数表现相关信息
 
 请求参数:
 
@@ -201,7 +212,9 @@ API访问地址：
   }
 }
 ```
-#### <span id="v1/kchart"> GET /kchart 获取指数K线图
+#### kchart 
+
+获取指数K线图
 
 请求参数:
 
@@ -238,7 +251,9 @@ API访问地址：
   }
 }
 ```
-#### <span id="v1/mapping_list"> GET /mapping_list 获取指数CID与指数名称的相关说明
+#### mapping_list 
+
+获取指数CID与指数名称的相关说明
 
 请求参数:
 
@@ -267,7 +282,9 @@ API访问地址：
     }
   }
 ```
-#### <span id="v1/coin_mapping_list"> GET /coin_mapping_list 获取单币CID与单币名称的相关说明
+#### coin_mapping_list 
+
+获取单币CID与单币名称的相关说明
 
 请求参数:
 
@@ -297,7 +314,9 @@ API访问地址：
   }
 ```
 
-#### <span id="v1/wechat_broadcast"> GET /wechat_broadcast 获取每日播报信息
+#### wechat_broadcast 
+
+获取每日播报信息
 
 请求参数:
 
@@ -333,7 +352,9 @@ API访问地址：
   ]
 }
 ```
-#### <span id="v1/wechat_hour_broadcast"> GET /wechat_hour_broadcast 获取整点播报信息
+#### wechat_hour_broadcast 
+
+获取整点播报信息
 
 请求参数:
 
@@ -371,7 +392,9 @@ API访问地址：
   ]
 }
 ```
-#### <span id="v1/wechat_monitor_min"> GET /wechat_monitor_min 获取指数分钟级监控信息
+#### wechat_monitor_min 
+
+获取指数分钟级监控信息
 
 请求参数:
 
@@ -410,7 +433,9 @@ API访问地址：
 }
 ```
 
-#### <span id="v1/wechat_monitor_24h"> GET /wechat_monitor_24h 以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息
+#### wechat_monitor_24h 
+
+以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息
 
 请求参数:
 
@@ -448,7 +473,9 @@ API访问地址：
   ]
 }
 ```
-#### <span id="v1/largement_alert"> GET /largement_alert 获取代币大额转账报警信息
+#### largement_alert 
+
+获取代币大额转账报警信息
 
 请求参数:
 
