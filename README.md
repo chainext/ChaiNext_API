@@ -1,12 +1,26 @@
 # ChaiNext API 接口说明文档
 关于ChaiNext API 接口的使用说明文档。
-## REST API 简介
-ChaiNext为用户提供了一套行情查询的API接口，帮助用户实时了解行情。
+## ChaiNext API 简介
+ChaiNext为用户提供了一套行情查询的API接口，旨在帮助用户快速、高效地查询和了解实时行情，获取相关信息。
+
+目前ChaiNext API提供以下功能：
+* 获取CSI系列指数信息、指数基本行情以及指数表现
+* 获取CSI系列指数中币种的权重系数
+* 获取CSI系列指数K线图
+* 获取CSI系列指数的CID与指数名称映射表
+* 获取单币的CID与单币名称映射表
+* 获取CSI系列指数每日播报
+* 获取CSI系列指数整点播报
+* 获取CSI系列指数分钟级监控信息
+* 获取CSI系列指数小时级监控信息
+* 获取代币大额转账报警信息
+
 API访问地址：
 
 国内用户请访问：[https://api.chainext.cn/v1](https://api.chainext.io/v1)
 
 海外用户请访问：[https://api.chainext.io/v1](https://api.chainext.io/v1)
+
 
 ## API 接口说明
 | 接口数据类型 | 请求方法 | 类型     | 描述  |
