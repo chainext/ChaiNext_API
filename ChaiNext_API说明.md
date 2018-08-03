@@ -469,7 +469,7 @@ API访问地址：
 
 | 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
 | ------------ | ----- | ------ | ----- | ----- | ------- |
-| id      | true  | integer | 单币CID | ||
+| id      | true  | integer | 见单币CID映射表 | ||
 | date      | true  | string | 查询日期，格式 2018-07-24 | ||
 
 
@@ -481,7 +481,8 @@ API访问地址：
 | msg     | true | string |相关处理信息|    |
 | data   | true | object |代币大额转账报警信息|      |
 
-接口访问示例：https://api.chainext.io/v1/largement_alert?id=0&date=2018-07-31
+接口访问示例1：https://api.chainext.io/v1/largement_alert?id=0&date=2018-07-31
+接口访问示例1：https://api.chainext.io/v1/largement_alert
 
 返回数据示例: 
 ```
