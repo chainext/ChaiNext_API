@@ -11,8 +11,8 @@ ChaiNext为用户提供了一套行情查询的API接口，旨在帮助用户快
 * 获取单币的CID与单币名称映射表
 * 获取CSI系列指数每日播报
 * 获取CSI系列指数整点播报
-* 获取CSI系列指数分钟级监控信息
-* 获取CSI系列指数小时级监控信息
+* 获取CSI系列指数快速涨跌异动监控信息
+* 获取CSI系列指数大幅涨跌报警监控信息
 * 获取代币大额转账报警信息
 
 API访问地址：
@@ -32,14 +32,14 @@ API访问地址：
 |K线图|[https://api.chainext.io/v1/kchart](#v1/kchart)|GET|获取指数K线图|
 |指数CID映射表|[https://api.chainext.io/v1/mapping_list](#v1/mapping_list)|GET|获取指数CID与指数名称的相关说明|
 |单币CID映射表|[https://api.chainext.io/v1/coin_mapping_list](#v1/coin_mapping_list)|GET|获取单币CID与单币名称的相关说明|
-|微信每日播报|[https://api.chainext.io/v1/wechat_broadcast](#v1/wechat_broadcast)|GET|获取每日播报信息|
-|微信整点播报|[https://api.chainext.io/v1/wechat_hour_broadcast](#v1/wechat_hour_broadcast)|GET|获取整点播报信息|
-|微信分钟级监控|[https://api.chainext.io/v1/wechat_monitor_min](#v1/wechat_monitor_min)|GET|获取指数分钟级监控信息|
-|微信小时级监控|[https://api.chainext.io/v1/wechat_monitor_24h](#v1/wechat_monitor_24h)|GET|以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息|
+|指数每日收盘(UTC24)播报|[https://api.chainext.io/v1/wechat_broadcast](#v1/wechat_broadcast)|GET|获取每日播报信息|
+|指数整点播报|[https://api.chainext.io/v1/wechat_hour_broadcast](#v1/wechat_hour_broadcast)|GET|获取整点播报信息|
+|指数快速涨跌异动监控信息|[https://api.chainext.io/v1/wechat_monitor_min](#v1/wechat_monitor_min)|GET|获取指数分钟级监控信息|
+|指数大幅涨跌报警监控信息|[https://api.chainext.io/v1/wechat_monitor_24h](#v1/wechat_monitor_24h)|GET|以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息|
 |代币大额转账报警|[https://api.chainext.io/v1/largement_alert](#v1/largement_alert)|GET|获取代币大额转账报警信息|
 
 
-
+##基本指数行情
 ####<span id="v1/index_basic"> GET /index_basic 获取基本指数行情
 请求参数: 
 
@@ -89,6 +89,9 @@ API访问地址：
 }
 ```
 
+
+
+##指数权重信息
 ####<span id="v1/weight"> GET /weight 获取指数的权重信息
 请求参数: 
 
@@ -125,6 +128,12 @@ API访问地址：
 }
 ```
 
+
+
+
+
+
+##指数列表信息
 ####<span id="v1/index_list"> GET /index_list 获取指数列表信息
 请求参数: 
 
@@ -177,6 +186,9 @@ API访问地址：
           }
         }
 ```
+
+
+##指数表现相关信息
 ####<span id="v1/index_detail"> GET /index_detail 获取指数表现相关信息
 
 请求参数:
@@ -216,6 +228,11 @@ API访问地址：
   }
 }
 ```
+
+
+
+
+##指数K线图
 ####<span id="v1/kchart"> GET /kchart 获取指数K线图
 
 请求参数:
@@ -225,7 +242,7 @@ API访问地址：
 | id       | true  | integer | 指数CID | 1 |指数范围内|
 | tstart       | true  | integer | 开始时间 | |Unix时间戳（单位：秒，例如：1530691531）|
 | tend       | true  | integer | 结束时间 | |Unix时间戳（单位：秒，例如：1530691531）|
-| grouping       | true  | string | 时间间隔 | |1min,5min,15min,30min,1H,1D,1w|
+| grouping       | true  | string | 时间间隔 | |1min,5min,15min,30min,1H,4h,6h,12h,1D,1w,1m|
 
 响应数据: 
 
@@ -253,6 +270,8 @@ API访问地址：
   }
 }
 ```
+
+##指数CID与指数名称对应表
 ####<span id="v1/mapping_list"> GET /mapping_list 获取指数CID与指数名称的相关说明
 
 请求参数:
@@ -282,6 +301,10 @@ API访问地址：
     }
   }
 ```
+
+
+
+##单币CID与指数名称对应表
 ####<span id="v1/coin_mapping_list"> GET /coin_mapping_list 获取单币CID与单币名称的相关说明
 
 请求参数:
@@ -312,7 +335,10 @@ API访问地址：
   }
 ```
 
-####<span id="v1/wechat_broadcast"> GET /wechat_broadcast 获取每日播报信息
+
+
+##指数收盘（UTC24）播报信息
+####<span id="v1/wechat_broadcast"> GET /wechat_broadcast 获取每日指数收盘播报信息
 
 请求参数:
 
@@ -348,6 +374,11 @@ API访问地址：
   ]
 }
 ```
+
+
+
+
+##指数每小时行情播报信息
 ####<span id="v1/wechat_hour_broadcast"> GET /wechat_hour_broadcast 获取整点播报信息
 
 请求参数:
@@ -386,7 +417,11 @@ API访问地址：
   ]
 }
 ```
-####<span id="v1/wechat_monitor_min"> GET /wechat_monitor_min 获取指数分钟级监控信息
+
+
+
+##指数快速涨跌异动报警信息
+####<span id="v1/wechat_monitor_min"> GET /wechat_monitor_min 获取指数指数快速涨跌异动报警信息
 
 请求参数:
 
@@ -425,6 +460,12 @@ API访问地址：
 }
 ```
 
+
+
+
+
+
+##指数大幅涨跌报警信息
 ####<span id="v1/wechat_monitor_24h"> GET /wechat_monitor_24h 以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息
 
 请求参数:
@@ -463,6 +504,11 @@ API访问地址：
   ]
 }
 ```
+
+
+
+
+##代币大额转账报警信息
 ####<span id="v1/largement_alert"> GET /largement_alert 获取代币大额转账报警信息
 
 请求参数:
