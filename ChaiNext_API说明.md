@@ -267,8 +267,7 @@ API访问地址：
 }
 ```
 
-##指数CID与指数名称对应表
-####<span id="v1/mapping_list"> GET /mapping_list 获取指数CID与指数名称的相关说明
+## 指数CID与指数名称对应表 <span id="v1/mapping_list"> GET /mapping_list 获取指数CID与指数名称的相关说明
 
 请求参数:
 
