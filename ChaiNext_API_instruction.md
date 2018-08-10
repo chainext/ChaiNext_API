@@ -38,7 +38,8 @@ otherwise: [https://api.chainext.io/v1](https://api.chainext.io/v1)
 |Coin transfer alert information|[https://api.chainext.io/v1/largement_alert](#代币大额转账报警信息--get-largement_alert-获取代币大额转账报警信息)|GET|get coin transfer alert information|
 
 
-### 基本指数行情 <span id="v1/index_basic"> GET /index_basic 获取基本指数行情
+
+## Basic Index Performance <span id="v1/index_basic"> GET /index_basic
 Request parameters: 
 
 | Name | Required  | Type     | Description  | Default   | Range  |
@@ -90,7 +91,7 @@ Response example:
 
 
 
-## 指数权重信息 <span id="v1/weight"> GET /weight 获取指数的权重信息
+## Coin Weight of Index <span id="v1/weight"> GET /weight
 Request parameters: 
 
 | Name | Required  | Type     | Description  | Default   | Range  |
@@ -127,11 +128,7 @@ Response example:
 ```
 
 
-
-
-
-
-## 指数列表信息 <span id="v1/index_list"> GET /index_list 获取指数列表信息
+## Index List <span id="v1/index_list"> GET /index_list
 Request parameters:
 
 | Name | Required  | Type     | Description  | Default   | Range  |
@@ -185,7 +182,7 @@ Response example:
 ```
 
 
-## 指数表现相关信息 <span id="v1/index_detail"> GET /index_detail 获取指数表现相关信息
+## Index Performance <span id="v1/index_detail"> GET /index_detail
 
 Request parameters: 
 
@@ -228,7 +225,7 @@ Response example:
 
 
 
-## 指数K线图 <span id="v1/kchart"> GET /kchart 获取指数K线图
+## Index Candlestick Chart <span id="v1/kchart"> GET /kchart
 
 Request parameters:
 
@@ -266,7 +263,7 @@ Response example:
 }
 ```
 
-## 指数CID与指数名称对应表 <span id="v1/mapping_list"> GET /mapping_list 获取指数CID与指数名称的相关说明
+## Index Mapping List <span id="v1/mapping_list"> GET /mapping_list
 
 Request parameters:
 
@@ -298,7 +295,7 @@ Response example:
 
 
 
-## 单币CID与指数名称对应表 <span id="v1/coin_mapping_list"> GET /coin_mapping_list 获取单币CID与单币名称的相关说明
+## Coin Mapping List <span id="v1/coin_mapping_list"> GET /coin_mapping_list
 
 Request parameters:
 
@@ -330,7 +327,7 @@ Response example:
 
 
 
-## 指数收盘（UTC24）播报信息 <span id="v1/wechat_broadcast"> GET /wechat_broadcast 获取每日指数收盘播报信息
+## Index Daily Broadcast <span id="v1/wechat_broadcast"> GET /wechat_broadcast
 
 Request parameters:
 
@@ -370,7 +367,7 @@ Response example:
 
 
 
-## 指数每小时行情播报信息 <span id="v1/wechat_hour_broadcast"> GET /wechat_hour_broadcast 获取整点播报信息
+## Index Hourly Broadcast <span id="v1/wechat_hour_broadcast"> GET /wechat_hour_broadcast
 
 Request parameters:
 
@@ -411,7 +408,7 @@ Response example:
 
 
 
-## 指数快速涨跌异动报警信息 <span id="v1/wechat_monitor_min"> GET /wechat_monitor_min 获取指数指数快速涨跌异动报警信息
+## Index Minute Monitor Information <span id="v1/wechat_monitor_min"> GET /wechat_monitor_min
 
 Request parameters:
 
@@ -455,7 +452,7 @@ Response example:
 
 
 
-## 指数大幅涨跌报警信息 <span id="v1/wechat_monitor_24h"> GET /wechat_monitor_24h 以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息
+## Index Hour Monitor Information <span id="v1/wechat_monitor_24h"> GET /wechat_monitor_24h 以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息
 
 Request parameters:
 
@@ -497,7 +494,7 @@ Response example:
 
 
 
-## 代币大额转账报警信息 <span id="v1/largement_alert"> GET /largement_alert 获取代币大额转账报警信息
+## Coin Transfer Alert <span id="v1/largement_alert"> GET /largement_alert
 
 Request parameters:
 
@@ -511,9 +508,6 @@ Response:
 
 | Name | Required  | Type     | Description  | Range  |
 | ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |代币大额转账报警信息|      |
 | code | true | string | response result    |1000,1001,1002|
 | msg     | true | string |related message|    |
 | data   | true | object |coin transfer alert |      |
