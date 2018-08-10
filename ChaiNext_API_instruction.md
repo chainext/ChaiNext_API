@@ -26,7 +26,7 @@ otherwise: [https://api.chainext.io/v1](https://api.chainext.io/v1)
 | ----- | --- | ------ | ----- |
 |Basic indices market information|[https://api.chainext.io/v1/index_basic](#basic-index-performance--get-index_basic)|GET|Get basic market information of indices|
 |Weight|[https://api.chainext.io/v1/weight](##coin-weight-of-index--get-weight)|GET|Get weight coefficient of coins in indices|
-|Index list|[https://api.chainext.io/v1/index_list]#index-list--get-index_list)|GET|get index list|
+|Index list|[https://api.chainext.io/v1/index_list](#index-list--get-index_list)|GET|get index list|
 |Index performance|[https://api.chainext.io/v1/index_detail](#index-performance--get-index_detail)|GET|Get index performance under stated period of time|
 |Candlestick chart|[https://api.chainext.io/v1/kchart](#index-candlestick-chart--get-kchart)|GET|get candlestick chart of CSI indices|
 |Mapping list|[https://api.chainext.io/v1/mapping_list](#index-mapping-list--get-mapping_list)|GET|Get mapping list between CSI indices' CID and their names|
