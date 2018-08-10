@@ -24,18 +24,18 @@ otherwise: [https://api.chainext.io/v1](https://api.chainext.io/v1)
 ## API Detailed Instruction 
 | Data Type | Method | type     | Description  |
 | ----- | --- | ------ | ----- |
-|Basic indices market information|[https://api.chainext.io/v1/index_basic](#基本指数行情--get-index_basic-获取基本指数行情)|GET|Get basic market information of indices|
-|Weight|[https://api.chainext.io/v1/weight](#指数权重信息--get-weight-获取指数的权重信息)|GET|Get weight coefficient of coins in indices|
-|Index list|[https://api.chainext.io/v1/index_list](#指数列表信息--get-index_list-获取指数列表信息)|GET|get index list|
-|Index performance|[https://api.chainext.io/v1/index_detail](#指数表现相关信息--get-index_detail-获取指数表现相关信息)|GET|Get index performance under stated period of time|
-|Candlestick chart|[https://api.chainext.io/v1/kchart](#指数k线图--get-kchart-获取指数k线图)|GET|get candlestick chart of CSI indices|
-|Mapping list|[https://api.chainext.io/v1/mapping_list](#单币cid与指数名称对应表--get-coin_mapping_list-获取单币cid与单币名称的相关说明)|GET|Get mapping list between CSI indices' CID and their names|
-|Coin mapping list|[https://api.chainext.io/v1/coin_mapping_list](#单币cid与指数名称对应表--get-coin_mapping_list-获取单币cid与单币名称的相关说明)|GET|Get mapping list between coins' CID and their names|
-|Daily broadcast|[https://api.chainext.io/v1/wechat_broadcast](#指数收盘utc24播报信息--get-wechat_broadcast-获取每日指数收盘播报信息)|GET|Get daily broadcast of CSI indices|
-|Hourly broadcast|[https://api.chainext.io/v1/wechat_hour_broadcast](#指数每小时行情播报信息--get-wechat_hour_broadcast-获取整点播报信息)|GET|get hourly broadcast of CSI indices|
-|Minute performance monitor information|[https://api.chainext.io/v1/wechat_monitor_min](#指数快速涨跌异动报警信息--get-wechat_monitor_min-获取指数指数快速涨跌异动报警信息)|GET|get minute performance monitor information of CSI indices|
-|Hour performance monitor information|[https://api.chainext.io/v1/wechat_monitor_24h](#指数大幅涨跌报警信息--get-wechat_monitor_24h-以utc0时间为基准获取当日的csi指数涨跌幅报警信息)|GET|get hour performance monitor information of CSI indices|
-|Coin transfer alert information|[https://api.chainext.io/v1/largement_alert](#代币大额转账报警信息--get-largement_alert-获取代币大额转账报警信息)|GET|get coin transfer alert information|
+|Basic indices market information|[https://api.chainext.io/v1/index_basic](#basic-index-performance--get-index_basic)|GET|Get basic market information of indices|
+|Weight|[https://api.chainext.io/v1/weight](##coin-weight-of-index--get-weight)|GET|Get weight coefficient of coins in indices|
+|Index list|[https://api.chainext.io/v1/index_list]#index-list--get-index_list)|GET|get index list|
+|Index performance|[https://api.chainext.io/v1/index_detail](#index-performance--get-index_detail)|GET|Get index performance under stated period of time|
+|Candlestick chart|[https://api.chainext.io/v1/kchart](#index-candlestick-chart--get-kchart)|GET|get candlestick chart of CSI indices|
+|Mapping list|[https://api.chainext.io/v1/mapping_list](#index-mapping-list--get-mapping_list)|GET|Get mapping list between CSI indices' CID and their names|
+|Coin mapping list|[https://api.chainext.io/v1/coin_mapping_list](#coin-mapping-list--get-coin_mapping_list)|GET|Get mapping list between coins' CID and their names|
+|Daily broadcast|[https://api.chainext.io/v1/wechat_broadcast](#index-daily-broadcast--get-wechat_broadcast)|GET|Get daily broadcast of CSI indices|
+|Hourly broadcast|[https://api.chainext.io/v1/wechat_hour_broadcast](#index-hourly-broadcast--get-wechat_hour_broadcast)|GET|get hourly broadcast of CSI indices|
+|Minute performance monitor information|[https://api.chainext.io/v1/wechat_monitor_min](#index-minute-monitor-information--get-wechat_monitor_min)|GET|get minute performance monitor information of CSI indices|
+|Hour performance monitor information|[https://api.chainext.io/v1/wechat_monitor_24h](#index-hour-monitor-information--get-wechat_monitor_24h)|GET|get hour performance monitor information of CSI indices|
+|Coin transfer alert information|[https://api.chainext.io/v1/largement_alert](#coin-transfer-alert--get-largement_alert)|GET|get coin transfer alert information|
 
 
 
@@ -452,7 +452,7 @@ Response example:
 
 
 
-## Index Hour Monitor Information <span id="v1/wechat_monitor_24h"> GET /wechat_monitor_24h 以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息
+## Index Hour Monitor Information <span id="v1/wechat_monitor_24h"> GET /wechat_monitor_24h
 
 Request parameters:
 
