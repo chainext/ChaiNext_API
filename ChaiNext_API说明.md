@@ -31,7 +31,7 @@ API访问地址：
 |权重|[https://api.chainext.io/v1/weight](#指数权重信息--get-weight-获取指数的权重信息)|GET|获取指数的权重信息|
 |指数列表|[https://api.chainext.io/v1/index_list](#指数列表信息--get-index_list-获取指数列表信息)|GET|获取指数列表信息|
 |指数表现|[https://api.chainext.io/v1/index_detail](#指数表现相关信息--get-index_detail-获取指数表现相关信息)|GET|获取指数在指定时段段内的表现相关信息|
-|tradingview中调用chainext的K线|[https://chainext.cn/tradingview](#直接调用chainext在tradingview上的数据--get-kchart-直接调用chainext在tradingview上的数据)|GET|直接调用chainext在tradingview上的数据|
+|tradingview中调用chainext的K线|[https://chainext.cn/tradingview](#直接调用chainext在tradingview上的数据)|GET|直接调用chainext在tradingview上的数据|
 |K线图|[https://api.chainext.io/v1/kchart](#指数k线图--get-kchart-获取指数k线图)|GET|获取指数K线图|
 |指数CID映射表|[https://api.chainext.io/v1/mapping_list](#单币cid与指数名称对应表--get-coin_mapping_list-获取单币cid与单币名称的相关说明)|GET|获取指数CID与指数名称的相关说明|
 |单币CID映射表|[https://api.chainext.io/v1/coin_mapping_list](#单币cid与指数名称对应表--get-coin_mapping_list-获取单币cid与单币名称的相关说明)|GET|获取单币CID与单币名称的相关说明|
