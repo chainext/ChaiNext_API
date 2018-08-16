@@ -6,6 +6,7 @@ ChaiNext provided a series of API, in order to help users obtain market informat
 Currently, ChaiNext API provide following functions:
 * get basic information, market quotations and details of CSI indices
 * get coin weight coefficient of CSI indices
+* get chainext index data from tradingview
 * get candlestick chart of CSI indices
 * get mapping list between CSI indices' CID and their names
 * get mapping list between coins' CID and their names
@@ -28,6 +29,7 @@ otherwise: [https://api.chainext.io/v1](https://api.chainext.io/v1)
 |Weight|[https://api.chainext.io/v1/weight](##coin-weight-of-index--get-weight)|GET|Get weight coefficient of coins in indices|
 |Index list|[https://api.chainext.io/v1/index_list](#index-list--get-index_list)|GET|get index list|
 |Index performance|[https://api.chainext.io/v1/index_detail](#index-performance--get-index_detail)|GET|Get index performance under stated period of time|
+|get chainext k chart in tradingview|[https://chainext.cn/tradingview](#get chainext k chart in tradingview)|GET|get chainext k chart in tradingview|
 |Candlestick chart|[https://api.chainext.io/v1/kchart](#index-candlestick-chart--get-kchart)|GET|get candlestick chart of CSI indices|
 |Mapping list|[https://api.chainext.io/v1/mapping_list](#index-mapping-list--get-mapping_list)|GET|Get mapping list between CSI indices' CID and their names|
 |Coin mapping list|[https://api.chainext.io/v1/coin_mapping_list](#coin-mapping-list--get-coin_mapping_list)|GET|Get mapping list between coins' CID and their names|
@@ -223,7 +225,20 @@ Response example:
 ```
 
 
+## get chainext k chart in tradingview
 
+
+https://chainext.cn/tradingview  is chainext's cis index standard UDF，after you get the lisence from tradingview，you can get chainext k charts in tradingview directly。
+
+including 5 interface 
+
+```
+/config
+/time
+/search
+/symbol
+/history
+```
 
 ## Index Candlestick Chart <span id="v1/kchart"> GET /kchart
 
