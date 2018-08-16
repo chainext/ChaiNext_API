@@ -6,6 +6,7 @@ ChaiNext为用户提供了一套行情查询的API接口，旨在帮助用户快
 目前ChaiNext API提供以下功能：
 * 获取CSI系列指数信息、指数基本行情以及指数表现
 * 获取CSI系列指数中币种的权重系数
+* 在tradingview中直接调用chainext的指数行情
 * 获取CSI系列指数K线图
 * 获取CSI系列指数的CID与指数名称映射表
 * 获取单币的CID与单币名称映射表
@@ -14,6 +15,7 @@ ChaiNext为用户提供了一套行情查询的API接口，旨在帮助用户快
 * 获取CSI系列指数快速涨跌异动监控信息
 * 获取CSI系列指数大幅涨跌报警监控信息
 * 获取代币大额转账报警信息
+
 
 API访问地址：
 
@@ -226,6 +228,20 @@ API访问地址：
 }
 ```
 
+## 直接调用chainext在tradingview上的数据（easy模式）
+
+
+https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tradingview获取到代码许可后，可直接在tradingview中轻松调用chainext的指数K线行情。
+
+包含五个接口 
+
+```
+/config
+/time
+/search
+/symbol
+/history
+```
 
 
 
