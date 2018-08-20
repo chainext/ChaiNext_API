@@ -110,7 +110,7 @@ API访问地址：
 | data   | true | object |指数权重数据|      |
 | updated_time| true | string |数据更新时间|      |
 
-接口访问示例：https://api.chainext.io/v1/weight?id=csi100
+接口访问示例：https://api.chainext.io/v1/weight?id=4
 
 返回数据示例: 
 ```
