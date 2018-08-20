@@ -109,7 +109,7 @@ Response:
 | data   | true | object |index weight data|      |
 | updated_time| true | string |data update time|      |
 
-API access example：https://api.chainext.io/v1/weight?id=csi100
+API access example：https://api.chainext.io/v1/weight?id=4
 
 Response example: 
 ```
