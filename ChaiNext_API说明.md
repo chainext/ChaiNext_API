@@ -40,8 +40,8 @@ API访问地址：
 |指数快速涨跌异动监控信息|[https://api.chainext.io/v1/wechat_monitor_min](#指数快速涨跌异动报警信息--get-wechat_monitor_min-获取指数指数快速涨跌异动报警信息)|GET|获取指数分钟级监控信息|
 |指数大幅涨跌报警监控信息|[https://api.chainext.io/v1/wechat_monitor_24h](#指数大幅涨跌报警信息--get-wechat_monitor_24h-以utc0时间为基准获取当日的csi指数涨跌幅报警信息)|GET|以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息|
 |代币大额转账报警|[https://api.chainext.io/v1/largement_alert](#代币大额转账报警信息--get-largement_alert-获取代币大额转账报警信息)|GET|获取代币大额转账报警信息|
-|情绪指数列表|[https://api.chainext.io/v1/mood_indices](#情绪指数列表--get-mood_indices-获取情绪指数列表)|GET|获取情绪指数列表|
-|情绪指数|[https://api.chainext.io/v1/mood_index](#情绪指数--get-mood_index-获取情绪指数信息)|GET|获取情绪指数信息|
+|情绪指数列表|[https://api.chainext.io/v1/mood_indices](#情绪指数列表--get-mood_indices-获取情绪指数列表)|GET|获取情绪指数列表，目前包括BTC泡沫指数和USDT折溢价指数|
+|情绪指数|[https://api.chainext.io/v1/mood_index](#情绪指数--get-mood_index-获取情绪指数信息)|GET|获取情绪指数信息，获取情绪指数列表，目前包括BTC泡沫指数和USDT折溢价指数|
 
 
 ### 基本指数行情 <span id="v1/index_basic"> GET /index_basic 获取基本指数行情
