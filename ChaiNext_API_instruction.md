@@ -271,7 +271,7 @@ Response example:
     "lines": [
       [
         "1529093700000, 0.075646, 0.076141, 0.075646, 0.076035, 356.9439"
-      ],  # 数据分别为unix时间戳，开盘价，收盘价，最高价，最低价，交易额    
+      ],  # unix timestamp，open,high,low,close,turnover    
       ...
     ]
   }
