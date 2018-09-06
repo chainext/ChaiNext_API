@@ -623,7 +623,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 | ------ | ---- | ------ | ----------- | ------ |
 | code | true | string | 请求处理结果    |1000,1001,1002|
 | msg     | true | string |相关处理信息|    |
-| data   | true | object |代币大额转账报警信息|      |
+| data   | true | object |日期|      |
 
 接口访问示例1：https://api.chainext.io/v1/mood_index
 
