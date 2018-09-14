@@ -670,7 +670,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 }
 ```
 
-## 情绪指数表现<span id="v1/mood_index"> GET /mood_index 获取情绪指数信息
+## 情绪指数表现<span id="v1/mood_index"> GET /mood_index 获取情绪指数表现
 
 请求参数:
 
@@ -711,7 +711,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
   }
 }
 ```
-## 价格基准指数列表 <span id="v1/coinlistt"> GET /coinlist获取价格基准指数列表信息
+## 价格基准指数列表 <span id="v1/coinlistt"> GET /coinlist获取价格基准指数列表
 请求参数: 
 
 | 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
@@ -787,7 +787,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 
 
-## 价格基准指数表现 <span id="v1/coin_detail"> GET /coin_detail 获取价格基准指数表现相关信息
+## 价格基准指数表现 <span id="v1/coin_detail"> GET /coin_detail 获取价格基准指数表现
 
 请求参数:
 
