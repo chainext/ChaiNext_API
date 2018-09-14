@@ -549,6 +549,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
       "total": 100,
       "data": [
         {
+        "title": "ChaiNext:WTC发生数量499089.0的大额转账",
         "time": "2018-08-01 07:19:55",
         "content": "代币大额转账报警\r\n\r\nUTC0时间07月31日06时13分(北京时间07月31日14时13分)\r\n\r\nBTC发生数量为1297.95的大额转账交易（tx为8310336887225ae3248644201a406d23db0e7f8a7efa1c499b3fdc4079f6bcf2），转出方未知，转入方包含其他（共计1297.95个，100%）\r\n\r\n想了解更多详细信息，请登录ChaiNext官网https://chainext.io查询|微信公众号ChaiNext"
         }
