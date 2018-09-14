@@ -30,7 +30,7 @@ API访问地址：
 |基本指数行情|[https://api.chainext.io/v1/index_basic](#基本指数行情--get-index_basic-获取基本指数行情)|GET|获取指数的基本行情|
 |权重|[https://api.chainext.io/v1/weight](#指数权重信息--get-weight-获取指数的权重信息)|GET|获取指数的权重信息|
 |通证指数列表|[https://api.chainext.io/v1/index_list](#通证指数列表信息--get-index_list-获取通证指数列表信息)|GET|获取通证指数列表信息|
-|指数表现|[https://api.chainext.io/v1/index_detail](#指数表现相关信息--get-index_detail-获取指数表现相关信息)|GET|获取指数在指定时段段内的表现相关信息|
+|通证指数表现|[https://api.chainext.io/v1/index_detail](#通证指数表现相关信息--get-index_detail-获取指数表现相关信息)|GET|获取通证指数在指定时段段内的表现相关信息|
 |tradingview中调用chainext的K线|[https://chainext.cn/tradingview](#直接调用chainext在tradingview上的数据)|GET|直接调用chainext在tradingview上的数据|
 |K线图|[https://api.chainext.io/v1/kchart](#指数k线图--get-kchart-获取指数k线图)|GET|获取指数K线图|
 |指数CID映射表|[https://api.chainext.io/v1/mapping_list](#单币cid与指数名称对应表--get-coin_mapping_list-获取单币cid与单币名称的相关说明)|GET|获取指数CID与指数名称的相关说明|
@@ -41,8 +41,9 @@ API访问地址：
 |指数大幅涨跌报警监控信息|[https://api.chainext.io/v1/wechat_monitor_24h](#指数大幅涨跌报警信息--get-wechat_monitor_24h-以utc0时间为基准获取当日的csi指数涨跌幅报警信息)|GET|以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息|
 |代币大额转账报警|[https://api.chainext.io/v1/largement_alert](#代币大额转账报警信息--get-largement_alert-获取代币大额转账报警信息)|GET|获取代币大额转账报警信息|
 |情绪指数列表|[https://api.chainext.io/v1/mood_indices](#情绪指数列表--get-mood_indices-获取情绪指数列表)|GET|获取情绪指数列表，目前包括BTC泡沫指数和USDT折溢价指数|
-|情绪指数|[https://api.chainext.io/v1/mood_index](#情绪指数--get-mood_index-获取情绪指数信息)|GET|获取情绪指数信息，获取情绪指数列表，目前包括BTC泡沫指数和USDT折溢价指数|
-|价格基准指数|[https://api.chainext.io/v1/coin_index](#价格基准指数--get-mood_index-获取价格基准指数信息)|GET|获取价格基准指数信息，获取价格基准指数列表，目前包括市值排名前100名的数字货币价格基准指数信息|
+|情绪指数表现|[https://api.chainext.io/v1/mood_index](#情绪指数表现--get-mood_index-获取情绪指数信息)|GET|获取情绪指数信息，目前包括BTC泡沫指数和USDT折溢价指数|
+|价格基准指数列表|[https://api.chainext.io/v1/coinlist](#情绪指数列表--get-coinlist-获取价格基准指数列表)|GET|获取价格基准指数列表，目前包括市值排名前100的数字货币的价格基准指数列表|
+|价格基准指数表现|[https://api.chainext.io/v1/coin_detail](#价格基准指数表现--get-coin_detail-获取价格基准指数信息)|GET|获取价格基准指数信息，目前包括市值排名前100的数字货币的价格基准指数信息|
 
 ### 基本指数行情 <span id="v1/index_basic"> GET /index_basic 获取基本指数行情
 请求参数: 
@@ -137,13 +138,14 @@ API访问地址：
 
 
 
-## 指数列表信息 <span id="v1/index_list"> GET /index_list 获取指数列表信息
+## 通证指数列表信息 <span id="v1/index_list"> GET /index_list 获取通证指数列表信息
 请求参数: 
 
 | 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
 | ------------ | ----- | ------ | ----- | ----- | ------- |
 | page       | true  | integer | 页码 | 1 |由指数数量决定|
 | page_size       | true  | integer | 每页数量  | 20 |由指数数量决定|
+| price7       | false  | integer | 是否需要7日数据  | 1 |0，1|
 
 响应数据: 
 
@@ -154,9 +156,9 @@ API访问地址：
 | data   | true | object |指数列表数据|      |
 | updated_time| true | string |数据更新时间|      |
 
-接口访问示例：https://api.chainext.io/v1/index_list?page=1&page_size=20
+接口访问示例1：https://api.chainext.io/v1/index_list?page=1&page_size=20
 
-返回数据示例: 
+返回数据示例1: 
 ```
   {
   "code": 1000,
@@ -189,9 +191,9 @@ API访问地址：
           }
         }
 ```
-接口访问示例：https://api.chainext.io/v1/index_list?page=1&page_size=20&price7=0
+接口访问示例2：https://api.chainext.io/v1/index_list?page=1&page_size=20&price7=0
 
-返回数据示例: 
+返回数据示例2: 
 ```
   {
   "code": 1000,
@@ -222,7 +224,7 @@ API访问地址：
 
 
 
-## 指数表现相关信息 <span id="v1/index_detail"> GET /index_detail 获取指数表现相关信息
+## 通证指数表现相关信息 <span id="v1/index_detail"> GET /index_detail 获取通证指数表现相关信息
 
 请求参数:
 
@@ -594,7 +596,9 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 请求参数:
 
-无。
+| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
+| ------------ | ----- | ------ | ----- | ----- | ------- |
+| price7       | false  | integer | 是否需要7日数据  | 1 |0，1|
 
 
 响应数据: 
@@ -707,12 +711,14 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
   }
 }
 ```
-## 价格基准指数列表 <span id="v1/mood_indices"> GET /mood_indices 获取价格基准指数列表
+## 价格基准指数列表信息 <span id="v1/coinlistt"> GET /coinlist获取价格基准指数列表信息
+请求参数: 
 
-请求参数:
-
-无。
-
+| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
+| ------------ | ----- | ------ | ----- | ----- | ------- |
+| page       | true  | integer | 页码 | 1 |由指数数量决定|
+| page_size       | true  | integer | 每页数量  | 20 |由指数数量决定|
+| price7       | false  | integer | 是否需要7日数据  | 1 |0，1|
 
 响应数据: 
 
@@ -720,65 +726,104 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 | ------ | ---- | ------ | ----------- | ------ |
 | code | true | string | 请求处理结果    |1000,1001,1002|
 | msg     | true | string |相关处理信息|    |
-| data   | true | object |情绪指数列表|      |
+| data   | true | object |指数列表数据|      |
+| updated_time| true | string |数据更新时间|      |
 
-接口访问示例1：https://api.chainext.io/v1/mood_indices
+接口访问示例1：https://apitest.coinidx.pro/v1/coinlist?page=1&page_size=10
 
+返回数据示例1: 
+```
+{
+	"code": 1000,
+	"msg": "",
+	"data": {
+		"total": 10,
+		"current_page": 1,
+		"data": [{
+			"CID": 0,
+			"symbol": "BTC",
+			"cmc_symbol": "bitcoin",
+			"latest": 6429.64119179315,
+			"change_24h": 2.422936244366607,
+			"change_24h_abs": 153.34800781297054,
+			"change_utc0": -0.8133176664924541,
+			"change_utc0_abs": -52.722206726400145,
+			"marketcap": 111021578904.8711,
+			"turnover_24h": 4345943880.98,
+			"price7": [6193.00829910963, 6239.20066083109, 6313.31470854928, 6283.89114313655, 6329.01539070658, 6482.36339851955, 6557.90283812117]
+		},
+		......
+		],
+		"updated_time": 1536919458.3067229
+	}
+```
+接口访问示例2：https://apitest.coinidx.pro/v1/coinlist?page=1&page_size=10&price7=0
+
+返回数据示例2: 
+```
+{
+	"code": 1000,
+	"msg": "",
+	"data": {
+		"total": 10,
+		"current_page": 1,
+		"data": [{
+			"CID": 0,
+			"symbol": "BTC",
+			"cmc_symbol": "bitcoin",
+			"latest": 6429.64119179315,
+			"change_24h": 2.422936244366607,
+			"change_24h_abs": 153.34800781297054,
+			"change_utc0": -0.8133176664924541,
+			"change_utc0_abs": -52.722206726400145,
+			"marketcap": 111021578904.8711,
+			"turnover_24h": 4345943880.98,
+		},
+		......
+		],
+		"updated_time": 1536919458.3067229
+	}
+```
+
+
+
+## 价格基准指数表现相关信息 <span id="v1/coin_detail"> GET /coin_detail 获取价格基准指数表现相关信息
+
+请求参数:
+
+| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
+| ------------ | ----- | ------ | ----- | ----- | ------- |
+| id       | true  | integer | 指数CID | 1 |指数范围内|
+| tstart       | false  | integer | 开始时间 | |Unix时间戳（单位：秒，例如：1530691531）|
+| tend       | false  | integer | 结束时间 | |Unix时间戳（单位：秒，例如：1530691531）|
+
+响应数据: 
+
+| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
+| ------ | ---- | ------ | ----------- | ------ |
+| code | true | string | 请求处理结果    |1000,1001,1002|
+| msg     | true | string |相关处理信息|    |
+| data   | true | object |指数表现相关数据|      |
+
+接口访问示例：https://apitest.coinidx.pro/v1/coin_detail?id=0
 
 返回数据示例: 
 ```
-{
-  "code": 1000,
-  "msg": "",
-  "data": [
-    {
-      "symbol": "usdt_usd",
-      "CID": 90001,
-      "intro_en": "USDT Premium Index is designed to measure the premium of USDT against USD in OTC market. If index is greater than 1, the USDT is traded at premium, otherwise the USDT is traded at discount.",
-      "intro_zh": "USDT折溢价指数由ChaiNext根据USDT场外价格及离岸人民币汇率进行计算，反映了资金出入通证市场的拥挤程度。指数大于1表示USDT溢价，小于1则表示USDT折价。",
-      "url": "https://chainext-doc.oss-cn-beijing.aliyuncs.com/%E6%83%85%E7%BB%AA%E6%8C%87%E6%95%B0/ChaiNext-Index%20Methodology-USDT%20Premium%20INDEX.pdf",
-      "full_name_en": "usdt premium index",
-      "full_name_zh": "USDT折溢价指数",
-      "latest": 0.997759,
-      "change_24h": -0.1912629255024928,
-      "change_24h_abs": -0.0019120000000000248,
-      "change_utc0": -0.273963018490754,
-      "change_utc0_abs": -0.0027409999999999934,
-      "datetime": 1534993118,
-      "price7": [
-        1.00663,
-        1.00646,
-        1.00645,
-        1.00649,
-        1.00652,
-        1.00669,
-        ]
-    }
-}
-```
-接口访问示例2：https://api.chainext.io/v1/mood_indices?price7=0
-
-
-返回数据示例: 
-```
-{
-  "code": 1000,
-  "msg": "",
-  "data": [
-    {
-      "symbol": "usdt_usd",
-      "CID": 90001,
-      "intro_en": "USDT Premium Index is designed to measure the premium of USDT against USD in OTC market. If index is greater than 1, the USDT is traded at premium, otherwise the USDT is traded at discount.",
-      "intro_zh": "USDT折溢价指数由ChaiNext根据USDT场外价格及离岸人民币汇率进行计算，反映了资金出入通证市场的拥挤程度。指数大于1表示USDT溢价，小于1则表示USDT折价。",
-      "url": "https://chainext-doc.oss-cn-beijing.aliyuncs.com/%E6%83%85%E7%BB%AA%E6%8C%87%E6%95%B0/ChaiNext-Index%20Methodology-USDT%20Premium%20INDEX.pdf",
-      "full_name_en": "usdt premium index",
-      "full_name_zh": "USDT折溢价指数",
-      "latest": 0.997759,
-      "change_24h": -0.1912629255024928,
-      "change_24h_abs": -0.0019120000000000248,
-      "change_utc0": -0.273963018490754,
-      "change_utc0_abs": -0.0027409999999999934,
-      "datetime": 1534993118,
-    }
+ {
+	"code": 1000,
+	"msg": "",
+	"data": {
+		"CID": 0,
+		"symbol": "BTC",
+		"cmc_symbol": "bitcoin",
+		"latest": 6437.83077876688,
+		"change_24h": 2.422936244366607,
+		"change_24h_abs": 153.34800781297054,
+		"change_utc0": -0.6869812291430708,
+		"change_utc0_abs": -44.53261975267014,
+		"marketcap": 111163150677.354,
+		"turnover_24h": 4324973916.82,
+		"price7": [6193.00829910963, 6239.20066083109, 6313.31470854928, 6283.89114313655, 6329.01539070658, 6482.36339851955, 6557.90283812117]
+	}
 }
 ```
