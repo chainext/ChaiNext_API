@@ -42,7 +42,7 @@ API访问地址：
 |代币大额转账报警|[https://api.chainext.io/v1/largement_alert](#代币大额转账报警信息--get-largement_alert-获取代币大额转账报警信息)|GET|获取代币大额转账报警信息|
 |情绪指数列表|[https://api.chainext.io/v1/mood_indices](#情绪指数列表--get-mood_indices-获取情绪指数列表)|GET|获取情绪指数列表，目前包括BTC泡沫指数和USDT折溢价指数|
 |情绪指数表现|[https://api.chainext.io/v1/mood_index](#情绪指数表现--get-mood_index-获取情绪指数信息)|GET|获取情绪指数信息，目前包括BTC泡沫指数和USDT折溢价指数|
-|价格基准指数列表|[https://api.chainext.io/v1/coinlist](#情绪指数列表--get-coinlist-获取价格基准指数列表)|GET|获取价格基准指数列表，目前包括市值排名前100的数字货币的价格基准指数列表|
+|价格基准指数列表|[https://api.chainext.io/v1/coinlist](#价格基准指数列表--get-coinlist-获取价格基准指数列表)|GET|获取价格基准指数列表，目前包括市值排名前100的数字货币的价格基准指数列表|
 |价格基准指数表现|[https://api.chainext.io/v1/coin_detail](#价格基准指数表现--get-coin_detail-获取价格基准指数信息)|GET|获取价格基准指数信息，目前包括市值排名前100的数字货币的价格基准指数信息|
 
 ### 基本指数行情 <span id="v1/index_basic"> GET /index_basic 获取基本指数行情
@@ -670,7 +670,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 }
 ```
 
-## 情绪指数 <span id="v1/mood_index"> GET /mood_index 获取情绪指数信息
+## 情绪指数表现<span id="v1/mood_index"> GET /mood_index 获取情绪指数信息
 
 请求参数:
 
@@ -711,7 +711,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
   }
 }
 ```
-## 价格基准指数列表信息 <span id="v1/coinlistt"> GET /coinlist获取价格基准指数列表信息
+## 价格基准指数列表 <span id="v1/coinlistt"> GET /coinlist获取价格基准指数列表信息
 请求参数: 
 
 | 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
@@ -787,7 +787,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 
 
-## 价格基准指数表现相关信息 <span id="v1/coin_detail"> GET /coin_detail 获取价格基准指数表现相关信息
+## 价格基准指数表现 <span id="v1/coin_detail"> GET /coin_detail 获取价格基准指数表现相关信息
 
 请求参数:
 
