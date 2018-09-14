@@ -29,7 +29,7 @@ API访问地址：
 | ------------ | ----- | ------ | ----- |
 |基本指数行情|[https://api.chainext.io/v1/index_basic](#基本指数行情--get-index_basic-获取基本指数行情)|GET|获取指数的基本行情|
 |权重|[https://api.chainext.io/v1/weight](#指数权重信息--get-weight-获取指数的权重信息)|GET|获取指数的权重信息|
-|指数列表|[https://api.chainext.io/v1/index_list](#指数列表信息--get-index_list-获取指数列表信息)|GET|获取指数列表信息|
+|通证指数列表|[https://api.chainext.io/v1/index_list](#通证指数列表信息--get-index_list-获取通证指数列表信息)|GET|获取通证指数列表信息|
 |指数表现|[https://api.chainext.io/v1/index_detail](#指数表现相关信息--get-index_detail-获取指数表现相关信息)|GET|获取指数在指定时段段内的表现相关信息|
 |tradingview中调用chainext的K线|[https://chainext.cn/tradingview](#直接调用chainext在tradingview上的数据)|GET|直接调用chainext在tradingview上的数据|
 |K线图|[https://api.chainext.io/v1/kchart](#指数k线图--get-kchart-获取指数k线图)|GET|获取指数K线图|
@@ -42,7 +42,7 @@ API访问地址：
 |代币大额转账报警|[https://api.chainext.io/v1/largement_alert](#代币大额转账报警信息--get-largement_alert-获取代币大额转账报警信息)|GET|获取代币大额转账报警信息|
 |情绪指数列表|[https://api.chainext.io/v1/mood_indices](#情绪指数列表--get-mood_indices-获取情绪指数列表)|GET|获取情绪指数列表，目前包括BTC泡沫指数和USDT折溢价指数|
 |情绪指数|[https://api.chainext.io/v1/mood_index](#情绪指数--get-mood_index-获取情绪指数信息)|GET|获取情绪指数信息，获取情绪指数列表，目前包括BTC泡沫指数和USDT折溢价指数|
-
+|价格基准指数|[https://api.chainext.io/v1/coin_index](#价格基准指数--get-mood_index-获取价格基准指数信息)|GET|获取价格基准指数信息，获取价格基准指数列表，目前包括市值排名前100名的数字货币价格基准指数信息|
 
 ### 基本指数行情 <span id="v1/index_basic"> GET /index_basic 获取基本指数行情
 请求参数: 
@@ -189,6 +189,37 @@ API访问地址：
           }
         }
 ```
+接口访问示例：https://api.chainext.io/v1/index_list?page=1&page_size=20&price7=0
+
+返回数据示例: 
+```
+  {
+  "code": 1000,
+  "msg": "",
+  "data": {
+    "total": 20,
+    "current_page": 1,
+    "data": [
+              {
+                "symbol": "csi10X",
+                "id": "csi10X",
+                "full_name_en": "ChaiNext Large Cap index no BTC",
+                "full_name_zh": "ChaiNext大盘规模指数NoBTC",
+                "24h_max": 4986.09,
+                "24h_min": 4554.08,
+                "latest": 4581.11,
+                "change": -3.9420954984864633,
+                "change_abs": -40.37099999999987,
+                "turnover": 5167595300,
+                "component_num": 100,
+                "marketcap": 246780275125.75586,
+                "hot": 10000
+              }
+            ]
+          }
+        }
+```
+
 
 
 ## 指数表现相关信息 <span id="v1/index_detail"> GET /index_detail 获取指数表现相关信息
@@ -608,6 +639,32 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
     }
 }
 ```
+接口访问示例2：https://api.chainext.io/v1/mood_indices?price7=0
+
+
+返回数据示例: 
+```
+{
+  "code": 1000,
+  "msg": "",
+  "data": [
+    {
+      "symbol": "usdt_usd",
+      "CID": 90001,
+      "intro_en": "USDT Premium Index is designed to measure the premium of USDT against USD in OTC market. If index is greater than 1, the USDT is traded at premium, otherwise the USDT is traded at discount.",
+      "intro_zh": "USDT折溢价指数由ChaiNext根据USDT场外价格及离岸人民币汇率进行计算，反映了资金出入通证市场的拥挤程度。指数大于1表示USDT溢价，小于1则表示USDT折价。",
+      "url": "https://chainext-doc.oss-cn-beijing.aliyuncs.com/%E6%83%85%E7%BB%AA%E6%8C%87%E6%95%B0/ChaiNext-Index%20Methodology-USDT%20Premium%20INDEX.pdf",
+      "full_name_en": "usdt premium index",
+      "full_name_zh": "USDT折溢价指数",
+      "latest": 0.997759,
+      "change_24h": -0.1912629255024928,
+      "change_24h_abs": -0.0019120000000000248,
+      "change_utc0": -0.273963018490754,
+      "change_utc0_abs": -0.0027409999999999934,
+      "datetime": 1534993118,
+    }
+}
+```
 
 ## 情绪指数 <span id="v1/mood_index"> GET /mood_index 获取情绪指数信息
 
@@ -648,5 +705,80 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
     "change_utc0_abs": -0.0027409999999999934,
     "datetime": 1534993118
   }
+}
+```
+## 价格基准指数列表 <span id="v1/mood_indices"> GET /mood_indices 获取价格基准指数列表
+
+请求参数:
+
+无。
+
+
+响应数据: 
+
+| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
+| ------ | ---- | ------ | ----------- | ------ |
+| code | true | string | 请求处理结果    |1000,1001,1002|
+| msg     | true | string |相关处理信息|    |
+| data   | true | object |情绪指数列表|      |
+
+接口访问示例1：https://api.chainext.io/v1/mood_indices
+
+
+返回数据示例: 
+```
+{
+  "code": 1000,
+  "msg": "",
+  "data": [
+    {
+      "symbol": "usdt_usd",
+      "CID": 90001,
+      "intro_en": "USDT Premium Index is designed to measure the premium of USDT against USD in OTC market. If index is greater than 1, the USDT is traded at premium, otherwise the USDT is traded at discount.",
+      "intro_zh": "USDT折溢价指数由ChaiNext根据USDT场外价格及离岸人民币汇率进行计算，反映了资金出入通证市场的拥挤程度。指数大于1表示USDT溢价，小于1则表示USDT折价。",
+      "url": "https://chainext-doc.oss-cn-beijing.aliyuncs.com/%E6%83%85%E7%BB%AA%E6%8C%87%E6%95%B0/ChaiNext-Index%20Methodology-USDT%20Premium%20INDEX.pdf",
+      "full_name_en": "usdt premium index",
+      "full_name_zh": "USDT折溢价指数",
+      "latest": 0.997759,
+      "change_24h": -0.1912629255024928,
+      "change_24h_abs": -0.0019120000000000248,
+      "change_utc0": -0.273963018490754,
+      "change_utc0_abs": -0.0027409999999999934,
+      "datetime": 1534993118,
+      "price7": [
+        1.00663,
+        1.00646,
+        1.00645,
+        1.00649,
+        1.00652,
+        1.00669,
+        ]
+    }
+}
+```
+接口访问示例2：https://api.chainext.io/v1/mood_indices?price7=0
+
+
+返回数据示例: 
+```
+{
+  "code": 1000,
+  "msg": "",
+  "data": [
+    {
+      "symbol": "usdt_usd",
+      "CID": 90001,
+      "intro_en": "USDT Premium Index is designed to measure the premium of USDT against USD in OTC market. If index is greater than 1, the USDT is traded at premium, otherwise the USDT is traded at discount.",
+      "intro_zh": "USDT折溢价指数由ChaiNext根据USDT场外价格及离岸人民币汇率进行计算，反映了资金出入通证市场的拥挤程度。指数大于1表示USDT溢价，小于1则表示USDT折价。",
+      "url": "https://chainext-doc.oss-cn-beijing.aliyuncs.com/%E6%83%85%E7%BB%AA%E6%8C%87%E6%95%B0/ChaiNext-Index%20Methodology-USDT%20Premium%20INDEX.pdf",
+      "full_name_en": "usdt premium index",
+      "full_name_zh": "USDT折溢价指数",
+      "latest": 0.997759,
+      "change_24h": -0.1912629255024928,
+      "change_24h_abs": -0.0019120000000000248,
+      "change_utc0": -0.273963018490754,
+      "change_utc0_abs": -0.0027409999999999934,
+      "datetime": 1534993118,
+    }
 }
 ```
