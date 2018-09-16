@@ -59,6 +59,6 @@
 
 * 增加USDT折溢价指数(USDT Index)和比特币泡沫指数(BBI)的K线走势
 
-  * 请求路径为： https://api.chainext.io/v1/kchart?id=90001&grouping=1H&tstart=1526798662&tend=1531983011 （USDT Index）
+  * 请求路径为(国内用户建议换用cn域名)： https://api.chainext.io/v1/kchart?id=90001&grouping=1H&tstart=1526798662&tend=1531983011 （USDT Index）
                 https://api.chainext.io/v1/kchart?id=90002&grouping=1H&tstart=1526798662&tend=1531983011 （BBI）
             
