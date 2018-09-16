@@ -1,0 +1,64 @@
+## 生效日期：20180916 
+* 代币大额转账报警(largement_alert)
+
+  * 返回字段中增加了“标题”字段，便于媒体朋友使用
+  * 示例：接口访问示例1：https://api.chainext.io/v1/largement_alert
+
+          返回数据示例:`  {
+  "code": 1000,
+  "msg": "",
+  "data": [
+    {
+      "total": 100,
+      "data": [
+        {
+        "title": "ChaiNext:WTC发生数量499089.0的大额转账",
+        "time": "2018-08-01 07:19:55",
+        "content": "代币大额转账报警\r\n\r\nUTC0时间07月31日06时13分(北京时间07月31日14时13分)\r\n\r\nBTC发生数量为1297.95的大额转账交易（tx为8310336887225ae3248644201a406d23db0e7f8a7efa1c499b3fdc4079f6bcf2），转出方未知，转入方包含其他（共计1297.95个，100%）\r\n\r\n想了解更多详细信息，请登录ChaiNext官网https://chainext.io查询|微信公众号ChaiNext"
+        }
+      ]
+    }
+  ]
+}`
+
+  
+* 获取通证指数列表/单币列表/情绪指数列表信息(index_list/coinList/moodList)
+  * 增加请求参数
+  * 如果请求参数price7设置为0，则返回结果中不会有7day数据，提高请求速度。 
+  * 示例：接口访问示例：https://api.chainext.io/v1/index_list?page=1&page_size=20&price7=0
+         
+         返回数据示例:`{
+  "code": 1000,
+  "msg": "",
+  "data": {
+    "total": 20,
+    "current_page": 1,
+    "data": [
+              {
+                "symbol": "csi10X",
+                "id": "csi10X",
+                "full_name_en": "ChaiNext Large Cap index no BTC",
+                "full_name_zh": "ChaiNext大盘规模指数NoBTC",
+                "24h_max": 4986.09,
+                "24h_min": 4554.08,
+                "latest": 4581.11,
+                "change": -3.9420954984864633,
+                "change_abs": -40.37099999999987,
+                "turnover": 5167595300,
+                "component_num": 100,
+                "marketcap": 246780275125.75586,
+                "hot": 10000
+              }
+            ]
+          }
+        }`
+ 
+
+* 新增USDT代币大额转账报警
+  支持了USDT大额转账报警,ID=13,按照如下格式请求即可。https://api.chainext.io/v1/largement_alert?id=13
+
+* 增加USDT折溢价指数(USDT Index)和比特币泡沫指数(BBI)的K线走势
+
+  * 请求路径为： https://api.chainext.io/v1/kchart?id=90001&grouping=1H&tstart=1526798662&tend=1531983011 （USDT Index）
+                https://api.chainext.io/v1/kchart?id=90002&grouping=1H&tstart=1526798662&tend=1531983011 （BBI）
+            
