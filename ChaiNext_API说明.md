@@ -24,6 +24,9 @@ API访问地址：
 
 海外用户请访问：[https://api.chainext.io/v1](https://api.chainext.io/v1)
 
+媒体朋友想获取ChaiNext的原创文章可以使用rss，但是麻烦请标明转自ChaiNext哦！
+
+RSS链接：https://doc.chainext.cn/feed/ 或者 https://doc.chainext.io/feed/
 
 ## API 接口说明
 | 接口数据类型 | 请求方法 | 类型     | 描述  |
