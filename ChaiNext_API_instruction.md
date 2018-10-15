@@ -29,7 +29,7 @@ otherwise: [https://api.chainext.io/v1](https://api.chainext.io/v1)
 |Weight|[https://api.chainext.io/v1/weight](##coin-weight-of-index--get-weight)|GET|Get weight coefficient of coins in indices|
 |Index list|[https://api.chainext.io/v1/index_list](#index-list--get-index_list)|GET|get index list|
 |Index performance|[https://api.chainext.io/v1/index_detail](#index-performance--get-index_detail)|GET|Get index performance under stated period of time|
-|get chainext k chart in tradingview|[https://chainext.cn/tradingview](#get chainext k chart in tradingview)|GET|get chainext k chart in tradingview|
+|get chainext k chart in tradingview|[https://chainext.cn/tradingview](#get-chainext-k-chart-in-tradingview)|GET|get chainext k chart in tradingview|
 |Candlestick chart|[https://api.chainext.io/v1/kchart](#index-candlestick-chart--get-kchart)|GET|get candlestick chart of CSI indices|
 |Mapping list|[https://api.chainext.io/v1/mapping_list](#index-mapping-list--get-mapping_list)|GET|Get mapping list between CSI indices' CID and their names|
 |Coin mapping list|[https://api.chainext.io/v1/coin_mapping_list](#coin-mapping-list--get-coin_mapping_list)|GET|Get mapping list between coins' CID and their names|
@@ -38,6 +38,11 @@ otherwise: [https://api.chainext.io/v1](https://api.chainext.io/v1)
 |Minute performance monitor information|[https://api.chainext.io/v1/wechat_monitor_min](#index-minute-monitor-information--get-wechat_monitor_min)|GET|get minute performance monitor information of CSI indices|
 |Hour performance monitor information|[https://api.chainext.io/v1/wechat_monitor_24h](#index-hour-monitor-information--get-wechat_monitor_24h)|GET|get hour performance monitor information of CSI indices|
 |Coin transfer alert information|[https://api.chainext.io/v1/largement_alert](#coin-transfer-alert--get-largement_alert)|GET|get coin transfer alert information|
+|Sentiment Indices List|[https://api.chainext.io/v1/mood_indices](#sentiment-indices-list--get-mood_indices)|GET|get sentiment indices list, currently including BTC Bubble Index and USDT Index|
+|Sentiment Indices Performance|[https://api.chainext.io/v1/mood_index](#sentiment-indices-performance--get-mood_index)|GET|get sentiment indices performance, currently including BTC Bubble Index and USDT Index|
+|Coin Indices List|[https://api.chainext.io/v1/coinlist](#coin-indices-list--get-coinlist)|GET|get coin indices list, currently including top 100 cryptocurrencies|
+|Coin Indices Performance|[https://api.chainext.io/v1/coin_detail](#coin-indices-performance--get-coin_detail)|GET|get coin indices performance, currently including top 100 cryptocurrencies|
+|Last Coin Index|[https://coin.chainext.io/v1/coin_list_all](#last-coin-index--get-coin_list_all)|GET|get crypocurrencies realtime price, including most of the cryptocurrencies|
 
 
 
@@ -547,5 +552,281 @@ Response example:
       ]
     }
   ]
+}
+```
+
+## Sentiment Indices List <span id="v1/mood_indices"> GET /mood_indices
+
+Request parameters:
+
+| Name | Required  | Type     | Description  | Default   | Range  |
+| ------------ | ----- | ------ | ----- | ----- | ------- |
+| price7       | false  | integer | Display 7 days' data or not  | 1 |0，1|
+
+
+Response: 
+
+| Name | Required  | Type     | Description  | Range  |
+| ------ | ---- | ------ | ----------- | ------ |
+| code | true | string | response result    |1000,1001,1002|
+| msg     | true | string |related message|    |
+| data   | true | object |sentiment indices list|      |
+
+API access example 1: https://api.chainext.io/v1/mood_indices
+
+
+Response example:
+```
+{
+  "code": 1000,
+  "msg": "",
+  "data": [
+    {
+      "symbol": "usdt_usd",
+      "CID": 90001,
+      "intro_en": "USDT Premium Index is designed to measure the premium of USDT against USD in OTC market. If index is greater than 1, the USDT is traded at premium, otherwise the USDT is traded at discount.",
+      "intro_zh": "USDT折溢价指数由ChaiNext根据USDT场外价格及离岸人民币汇率进行计算，反映了资金出入通证市场的拥挤程度。指数大于1表示USDT溢价，小于1则表示USDT折价。",
+      "url": "https://chainext-doc.oss-cn-beijing.aliyuncs.com/%E6%83%85%E7%BB%AA%E6%8C%87%E6%95%B0/ChaiNext-Index%20Methodology-USDT%20Premium%20INDEX.pdf",
+      "full_name_en": "usdt premium index",
+      "full_name_zh": "USDT折溢价指数",
+      "latest": 0.997759,
+      "change_24h": -0.1912629255024928,
+      "change_24h_abs": -0.0019120000000000248,
+      "change_utc0": -0.273963018490754,
+      "change_utc0_abs": -0.0027409999999999934,
+      "datetime": 1534993118,
+      "price7": [
+        1.00663,
+        1.00646,
+        1.00645,
+        1.00649,
+        1.00652,
+        1.00669,
+        ]
+    }
+}
+```
+API access example 2:https://api.chainext.io/v1/mood_indices?price7=0
+
+
+Response example:
+```
+{
+  "code": 1000,
+  "msg": "",
+  "data": [
+    {
+      "symbol": "usdt_usd",
+      "CID": 90001,
+      "intro_en": "USDT Premium Index is designed to measure the premium of USDT against USD in OTC market. If index is greater than 1, the USDT is traded at premium, otherwise the USDT is traded at discount.",
+      "intro_zh": "USDT折溢价指数由ChaiNext根据USDT场外价格及离岸人民币汇率进行计算，反映了资金出入通证市场的拥挤程度。指数大于1表示USDT溢价，小于1则表示USDT折价。",
+      "url": "https://chainext-doc.oss-cn-beijing.aliyuncs.com/%E6%83%85%E7%BB%AA%E6%8C%87%E6%95%B0/ChaiNext-Index%20Methodology-USDT%20Premium%20INDEX.pdf",
+      "full_name_en": "usdt premium index",
+      "full_name_zh": "USDT折溢价指数",
+      "latest": 0.997759,
+      "change_24h": -0.1912629255024928,
+      "change_24h_abs": -0.0019120000000000248,
+      "change_utc0": -0.273963018490754,
+      "change_utc0_abs": -0.0027409999999999934,
+      "datetime": 1534993118,
+    }
+}
+```
+
+## Sentiment Indices Performance <span id="v1/mood_index"> GET /mood_index
+
+Request parameters:
+
+| Name | Required  | Type     | Description  | Default   | Range  |
+| ------------ | ----- | ------ | ----- | ----- | ------- |
+| id      | true  | integer | sentiment index CID | ||
+
+
+Responce: 
+
+| Name | Required  | Type     | Description  | Range  |
+| ------ | ---- | ------ | ----------- | ------ |
+| code | true | string | response result    |1000,1001,1002|
+| msg     | true | string |related message|    |
+| data   | true | object |date|      |
+
+API access example1：https://api.chainext.io/v1/mood_index
+
+Response example: 
+```
+{
+  "code": 1000,
+  "msg": "",
+  "data": {
+    "symbol": "usdt_usd",
+    "CID": 90001,
+    "intro_en": "USDT Premium Index is designed to measure the premium of USDT against USD in OTC market. If index is greater than 1, the USDT is traded at premium, otherwise the USDT is traded at discount.",
+    "intro_zh": "USDT折溢价指数由ChaiNext根据USDT场外价格及离岸人民币汇率进行计算，反映了资金出入通证市场的拥挤程度。指数大于1表示USDT溢价，小于1则表示USDT折价。",
+    "url": "https://chainext-doc.oss-cn-beijing.aliyuncs.com/%E6%83%85%E7%BB%AA%E6%8C%87%E6%95%B0/ChaiNext-Index%20Methodology-USDT%20Premium%20INDEX.pdf",
+    "full_name_en": "usdt premium index",
+    "full_name_zh": "USDT折溢价指数",
+    "latest": 0.997759,
+    "change_24h": -0.1912629255024928,
+    "change_24h_abs": -0.0019120000000000248,
+    "change_utc0": -0.273963018490754,
+    "change_utc0_abs": -0.0027409999999999934,
+    "datetime": 1534993118
+  }
+}
+```
+## Coin Indices List <span id="v1/coinlistt"> GET /coinlist
+Request parameters: 
+
+| Name | Required  | Type     | Description  | Default   | Range  |
+| ------------ | ----- | ------ | ----- | ----- | ------- |
+| page       | true  | integer | page number | 1 |depending on number of indices|
+| page_size       | true  | integer | rows per page  | 20 |depending on number of indices|
+| price7       | false  | integer | Display 7 days' data or not  | 1 |0，1|
+
+Responce: 
+
+| Name | Required  | Type     | Description  | Range  |
+| ------ | ---- | ------ | ----------- | ------ |
+| code | true | string | response result    |1000,1001,1002|
+| msg     | true | string |related message|    |
+| data   | true | object |indices list data|      |
+| updated_time| true | string |data updating time|      |
+
+API access example1：https://apitest.coinidx.pro/v1/coinlist?page=1&page_size=10
+
+Response example1: 
+```
+{
+	"code": 1000,
+	"msg": "",
+	"data": {
+		"total": 10,
+		"current_page": 1,
+		"data": [{
+			"CID": 0,
+			"symbol": "BTC",
+			"cmc_symbol": "bitcoin",
+			"latest": 6429.64119179315,
+			"change_24h": 2.422936244366607,
+			"change_24h_abs": 153.34800781297054,
+			"change_utc0": -0.8133176664924541,
+			"change_utc0_abs": -52.722206726400145,
+			"marketcap": 111021578904.8711,
+			"turnover_24h": 4345943880.98,
+			"price7": [6193.00829910963, 6239.20066083109, 6313.31470854928, 6283.89114313655, 6329.01539070658, 6482.36339851955, 6557.90283812117]
+		},
+		......
+		],
+		"updated_time": 1536919458.3067229
+	}
+```
+API access example2：https://apitest.coinidx.pro/v1/coinlist?page=1&page_size=10&price7=0
+
+Response example2: 
+```
+{
+	"code": 1000,
+	"msg": "",
+	"data": {
+		"total": 10,
+		"current_page": 1,
+		"data": [{
+			"CID": 0,
+			"symbol": "BTC",
+			"cmc_symbol": "bitcoin",
+			"latest": 6429.64119179315,
+			"change_24h": 2.422936244366607,
+			"change_24h_abs": 153.34800781297054,
+			"change_utc0": -0.8133176664924541,
+			"change_utc0_abs": -52.722206726400145,
+			"marketcap": 111021578904.8711,
+			"turnover_24h": 4345943880.98,
+		},
+		......
+		],
+		"updated_time": 1536919458.3067229
+	}
+```
+
+
+
+## Coin Indices Performance <span id="v1/coin_detail"> GET /coin_detail
+
+Request parameters:
+
+| Name | Required  | Type     | Description  | Default   | Range  |
+| ------------ | ----- | ------ | ----- | ----- | ------- |
+| id       | true  | integer | index CID | 1 |within coin indices|
+| tstart       | false  | integer | start time | |Unix timestamp（unit：second，example：1530691531）|
+| tend       | false  | integer | end time | |Unix timestamp（unit：second，example：1530691531）|
+
+Responce: 
+
+| Name | Required  | Type     | Description  | Range  |
+| ------ | ---- | ------ | ----------- | ------ |
+| code | true | string | response result    |1000,1001,1002|
+| msg     | true | string |related message|    |
+| data   | true | object |indice performance data|      |
+
+API access example：https://apitest.coinidx.pro/v1/coin_detail?id=0
+
+Response example: 
+```
+ {
+	"code": 1000,
+	"msg": "",
+	"data": {
+		"CID": 0,
+		"symbol": "BTC",
+		"cmc_symbol": "bitcoin",
+		"latest": 6437.83077876688,
+		"change_24h": 2.422936244366607,
+		"change_24h_abs": 153.34800781297054,
+		"change_utc0": -0.6869812291430708,
+		"change_utc0_abs": -44.53261975267014,
+		"marketcap": 111163150677.354,
+		"turnover_24h": 4324973916.82,
+		"price7": [6193.00829910963, 6239.20066083109, 6313.31470854928, 6283.89114313655, 6329.01539070658, 6482.36339851955, 6557.90283812117]
+	}
+}
+```
+
+## Last Coin Index  <span id="v1/coin_list_all"> GET /coin_list_all
+
+Request parameters:
+
+| Name | Required  | Type     | Description  | Default   | Range  |
+| ------------ | ----- | ------ | ----- | ----- | ------- |
+| id       | true  | integer | indices CID | 1 |within coin indices|
+
+Responce: 
+
+| Name | Required  | Type     | Description  | Range  |
+| ------ | ---- | ------ | ----------- | ------ |
+| code | true | string | response result    |1000,1001,1002|
+| msg     | true | string |related message|    |
+| data   | true | object |last coin price data|      |
+
+API access example：https://apitest.coinidx.pro/v1/coin_detail?id=0
+
+Response example: 
+```
+ {
+	"code": 1000,
+	"msg": "",
+	"data": [{
+		"CID": 0,
+		"symbol": "BTC",
+		"cmc_symbol": "bitcoin",
+		"latest": 6437.83077876688,
+		“update": 1539571270
+	},
+	{
+		"CID": 1,
+		"symbol": "ETH",
+		"cmc_symbol": "ethereum",
+		"latest": 197.30528266365172,
+		“update": 1539571270
+	},]
 }
 ```
