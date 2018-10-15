@@ -762,7 +762,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 		"updated_time": 1536919458.3067229
 	}
 ```
-接口访问示例2：https://apitest.coinidx.pro/v1/coinlist?page=1&page_size=10&price7=0
+接口访问示例2：https://api.chainext.io/v1/coinlist?page=1&page_size=10&price7=0
 
 返回数据示例2: 
 ```
@@ -810,7 +810,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 | msg     | true | string |相关处理信息|    |
 | data   | true | object |指数表现相关数据|      |
 
-接口访问示例：https://apitest.coinidx.pro/v1/coin_detail?id=0
+接口访问示例：https://api.chainext.io/v1/coin_detail?id=0
 
 返回数据示例: 
 ```
@@ -849,7 +849,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 | msg     | true | string |相关处理信息|    |
 | data   | true | object |单币最新价格相关数据|      |
 
-接口访问示例：https://apitest.coinidx.pro/v1/coin_detail?id=0
+接口访问示例：https://coin.chainext.io/v1/coin_list_all?id=0
 
 返回数据示例: 
 ```
@@ -862,13 +862,6 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 		"cmc_symbol": "bitcoin",
 		"latest": 6437.83077876688,
 		“update": 1539571270
-	},
-	{
-		"CID": 1,
-		"symbol": "ETH",
-		"cmc_symbol": "ethereum",
-		"latest": 197.30528266365172,
-		“update": 1539571270
-	},]
+	}]
 }
 ```
