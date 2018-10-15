@@ -23,3 +23,4 @@ ChaiNext为用户提供了一套行情查询的API接口，旨在帮助用户快
 * 2018-08-10 发布英文版本的api
 * 2018-08-16 增加tradingview的接口
 * 2018-09-16 [系列的接口升级](https://github.com/chainext/ChaiNext_API/blob/master/upgrade_records/20180916)
+* 2018-10-15 增加coin_list_all的接口文档
