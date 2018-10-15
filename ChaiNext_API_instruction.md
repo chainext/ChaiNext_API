@@ -720,7 +720,7 @@ Response example1:
 		"updated_time": 1536919458.3067229
 	}
 ```
-API access example2：https://apitest.coinidx.pro/v1/coinlist?page=1&page_size=10&price7=0
+API access example2：https://api.chainext.io/v1/coinlist?page=1&page_size=10&price7=0
 
 Response example2: 
 ```
@@ -768,7 +768,7 @@ Responce:
 | msg     | true | string |related message|    |
 | data   | true | object |indice performance data|      |
 
-API access example：https://apitest.coinidx.pro/v1/coin_detail?id=0
+API access example：https://api.chainext.io/v1/coin_detail?id=0
 
 Response example: 
 ```
@@ -807,7 +807,7 @@ Responce:
 | msg     | true | string |related message|    |
 | data   | true | object |last coin price data|      |
 
-API access example：https://apitest.coinidx.pro/v1/coin_detail?id=0
+API access example：https://coin.chainext.io/v1/coin_list_all?id=0
 
 Response example: 
 ```
@@ -820,13 +820,6 @@ Response example:
 		"cmc_symbol": "bitcoin",
 		"latest": 6437.83077876688,
 		“update": 1539571270
-	},
-	{
-		"CID": 1,
-		"symbol": "ETH",
-		"cmc_symbol": "ethereum",
-		"latest": 197.30528266365172,
-		“update": 1539571270
-	},]
+	}]
 }
 ```
