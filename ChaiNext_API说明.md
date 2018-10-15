@@ -48,6 +48,7 @@ RSS链接：https://doc.chainext.cn/feed/ 或者 https://doc.chainext.io/feed/
 |情绪指数表现|[https://api.chainext.io/v1/mood_index](#情绪指数表现--get-mood_index-获取情绪指数表现)|GET|获取情绪指数信息，目前包括BTC泡沫指数和USDT折溢价指数|
 |价格基准指数列表|[https://api.chainext.io/v1/coinlist](#价格基准指数列表--get-coinlist-获取价格基准指数列表)|GET|获取价格基准指数列表，目前包括市值排名前100的数字货币的价格基准指数列表|
 |价格基准指数表现|[https://api.chainext.io/v1/coin_detail](#价格基准指数表现--get-coin_detail-获取价格基准指数表现)|GET|获取价格基准指数信息，目前包括市值排名前100的数字货币的价格基准指数信息|
+|单币最新价格列表|[https://coin.chainext.io/v1/coin_list_all](#单币最新价格列表--get-coin_list_all-获取单币最新价格列表)|GET|获取数字货币的实时最新价格，有市场上大多数数字货币的实时最新价格|
 
 ### 基本指数行情 <span id="v1/index_basic"> GET /index_basic 获取基本指数行情
 请求参数: 
@@ -829,5 +830,45 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 		"turnover_24h": 4324973916.82,
 		"price7": [6193.00829910963, 6239.20066083109, 6313.31470854928, 6283.89114313655, 6329.01539070658, 6482.36339851955, 6557.90283812117]
 	}
+}
+```
+
+## 单币最新价格列表 <span id="v1/coin_list_all"> GET /coin_list_all 获取单币最新价格列表
+
+请求参数:
+
+| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
+| ------------ | ----- | ------ | ----- | ----- | ------- |
+| id       | true  | integer | 指数CID | 1 |指数范围内|
+
+响应数据: 
+
+| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
+| ------ | ---- | ------ | ----------- | ------ |
+| code | true | string | 请求处理结果    |1000,1001,1002|
+| msg     | true | string |相关处理信息|    |
+| data   | true | object |单币最新价格相关数据|      |
+
+接口访问示例：https://apitest.coinidx.pro/v1/coin_detail?id=0
+
+返回数据示例: 
+```
+ {
+	"code": 1000,
+	"msg": "",
+	"data": [{
+		"CID": 0,
+		"symbol": "BTC",
+		"cmc_symbol": "bitcoin",
+		"latest": 6437.83077876688,
+		“update": 1539571270
+	},
+	{
+		"CID": 1,
+		"symbol": "ETH",
+		"cmc_symbol": "ethereum",
+		"latest": 197.30528266365172,
+		“update": 1539571270
+	},]
 }
 ```
