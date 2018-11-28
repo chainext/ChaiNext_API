@@ -20,9 +20,13 @@ ChaiNext为用户提供了一套行情查询的API接口，旨在帮助用户快
 
 API访问地址：
 
+
+
 国内用户请访问：[https://api.chainext.cn/v1](https://api.chainext.io/v1)
 
 海外用户请访问：[https://api.chainext.io/v1](https://api.chainext.io/v1)
+
+* **上述api接口为为cdn转发接口，如需获取低延迟直连接口，请联系chainext**
 
 媒体朋友想获取ChaiNext的原创文章可以使用rss，但是麻烦请标明转自ChaiNext哦！
 
@@ -834,6 +838,8 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 ```
 
 ## 单币最新价格列表 <span id="v1/coin_list_all"> GET /coin_list_all 获取单币最新价格列表
+
+
 
 请求参数:
 
