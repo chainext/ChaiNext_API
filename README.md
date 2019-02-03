@@ -10,6 +10,7 @@ english version：[ChaiNext_API_instruction.md](https://github.com/chainext/Chai
 * vipapi (direct connect, Low delay and high availability)
   * china mainland ：vipapi.chainext.cn
   * others: vipapi.chainext.io
+  
 **sent email to us if you want to use vipapi,  whuxuanyuanlei@gmail.com, or you can contact us by wechat, search lulumentor**
 
 
