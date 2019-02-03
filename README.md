@@ -1,19 +1,16 @@
 # ChaiNext API 接口说明文档
 关于ChaiNext API 接口的使用说明文档。
-## ChaiNext API 简介
-ChaiNext为用户提供了一套行情查询的API接口，旨在帮助用户快速、高效地查询和了解实时行情，获取相关信息。
+中文版：[ChaiNext_API说明](https://github.com/chainext/ChaiNext_API/blob/master/ChaiNext_API%E8%AF%B4%E6%98%8E.md)
+english version：[ChaiNext_API_instruction.md](https://github.com/chainext/ChaiNext_API/blob/master/ChaiNext_API_instruction.md)
 
-目前ChaiNext API提供以下功能：
-* 获取CSI系列指数信息、指数基本行情以及指数表现
-* 获取CSI系列指数中币种的权重系数
-* 获取CSI系列指数K线图
-* 获取CSI系列指数的CID与指数名称映射表
-* 获取单币的CID与单币名称映射表
-* 获取CSI系列指数每日播报
-* 获取CSI系列指数整点播报
-* 获取CSI系列指数分钟级监控信息
-* 获取CSI系列指数小时级监控信息
-* 获取代币大额转账报警信息
+# API接入地址 api interface url
+* normal
+  * china mainland ：api.chainext.cn
+  * others: api.chainext.io
+* vipapi (direct connect, Low delay and high availability)
+  * china mainland ：vipapi.chainext.cn
+  * others: vipapi.chainext.io
+**sent email to us if you want to use vipapi,  whuxuanyuanlei@gmail.com, or you can contact us by wechat, search lulumentor**
 
 
 ## 修订记录
