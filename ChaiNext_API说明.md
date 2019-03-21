@@ -43,10 +43,6 @@ RSS链接：https://doc.chainext.cn/feed/ 或者 https://doc.chainext.io/feed/
 |K线图|[https://api.chainext.io/v1/kchart](#指数k线图--get-kchart-获取指数k线图)|GET|获取指数K线图|
 |指数CID映射表|[https://api.chainext.io/v1/mapping_list](#单币cid与指数名称对应表--get-coin_mapping_list-获取单币cid与单币名称的相关说明)|GET|获取指数CID与指数名称的相关说明|
 |单币CID映射表|[https://api.chainext.io/v1/coin_mapping_list](#单币cid与指数名称对应表--get-coin_mapping_list-获取单币cid与单币名称的相关说明)|GET|获取单币CID与单币名称的相关说明|
-|指数每日收盘(UTC24)播报|[https://api.chainext.io/v1/wechat_broadcast](#指数收盘utc24播报信息--get-wechat_broadcast-获取每日指数收盘播报信息)|GET|获取每日播报信息|
-|指数整点播报|[https://api.chainext.io/v1/wechat_hour_broadcast](#指数每小时行情播报信息--get-wechat_hour_broadcast-获取整点播报信息)|GET|获取整点播报信息|
-|指数快速涨跌异动监控信息|[https://api.chainext.io/v1/wechat_monitor_min](#指数快速涨跌异动报警信息--get-wechat_monitor_min-获取指数指数快速涨跌异动报警信息)|GET|获取指数分钟级监控信息|
-|指数大幅涨跌报警监控信息|[https://api.chainext.io/v1/wechat_monitor_24h](#指数大幅涨跌报警信息--get-wechat_monitor_24h-以utc0时间为基准获取当日的csi指数涨跌幅报警信息)|GET|以utc0时间为基准，获取当日的CSI指数涨跌幅报警信息|
 |代币大额转账报警|[https://api.chainext.io/v1/largement_alert](#代币大额转账报警信息--get-largement_alert-获取代币大额转账报警信息)|GET|获取代币大额转账报警信息|
 |情绪指数列表|[https://api.chainext.io/v1/mood_indices](#情绪指数列表--get-mood_indices-获取情绪指数列表)|GET|获取情绪指数列表，目前包括BTC泡沫指数和USDT折溢价指数|
 |情绪指数表现|[https://api.chainext.io/v1/mood_index](#情绪指数表现--get-mood_index-获取情绪指数表现)|GET|获取情绪指数信息，目前包括BTC泡沫指数和USDT折溢价指数|
