@@ -42,7 +42,8 @@ otherwise: [https://api.chainext.io/v1](https://api.chainext.io/v1)
 |Sentiment Indices Performance|[https://api.chainext.io/v1/mood_index](#sentiment-indices-performance--get-mood_index)|GET|get sentiment indices performance, currently including BTC Bubble Index and USDT Index|
 |Coin Indices List|[https://api.chainext.io/v1/coinlist](#coin-indices-list--get-coinlist)|GET|get coin indices list, currently including top 100 cryptocurrencies|
 |Coin Indices Performance|[https://api.chainext.io/v1/coin_detail](#coin-indices-performance--get-coin_detail)|GET|get coin indices performance, currently including top 100 cryptocurrencies|
-|Last Coin Index|[https://coin.chainext.io/v1/coin_list_all](#last-coin-index--get-coin_list_all)|GET|get crypocurrencies realtime price, including most of the cryptocurrencies|
+|Last Coin Index|[https://coin.chainext.cn/v1/coin_list_all](#last-coin-index--get-coin_list_all)|GET|get crypocurrencies realtime price, including most of the cryptocurrencies|
+|Stable Coin Index|[https://coin.chainext.cn/v1/pegged](#stable-coin-index--get-pegged)|GET|get stable currency price and volume history|
 
 
 
@@ -807,7 +808,7 @@ Responce:
 | msg     | true | string |related message|    |
 | data   | true | object |last coin price data|      |
 
-API access example：https://coin.chainext.io/v1/coin_list_all?id=0
+API access example：https://coin.chainext.cn/v1/coin_list_all?id=0
 
 Response example: 
 ```
@@ -822,4 +823,58 @@ Response example:
 		“update": 1539571270
 	}]
 }
+```
+
+# Stable Coin Index <span id="v1/pegged"> GET /pegged
+
+
+Request parameters:
+
+| Name | Required  | Type     | Description  | Default   | Range  |
+| ------------ | ----- | ------ | ----- | ----- | ------- |
+| index_id       | false  | integer | indices CID | 13 |within coin indices|
+| tstart       | false  | integer | start time | |Unix timestamp（unit：second，example：1530691531）|
+| tend       | false  | integer | end time | |Unix timestamp（unit：second，example：1530691531）|
+
+Responce: 
+
+| Name | Required  | Type     | Description  | Range  |
+| ------ | ---- | ------ | ----------- | ------ |
+| code | true | string | response result    |1000,1001,1002|
+| msg     | true | string |related message|    |
+| data   | true | object |last coin price data|      |
+
+API access example：https://coin.chainext.cn/v1/pegged
+
+Response example: 
+```python
+  {
+  "code": 1000,
+  "msg": "",
+  "data": [
+      {
+        "name": "DAI",
+        "index_id": 1,
+        "high": 1.02,
+        "open": 1.00,
+        "low": 0.99,
+        "close": 1.01,
+        "volume": 283487,
+        "startTime": 1557386700
+        "endTime": 1557386999
+      },
+      {
+        "name": "DAI",
+        "index_id": 1,
+        "high": 1.03,
+        "open": 1.01,
+        "low": 0.98,
+        "close": 1.00,
+        "volume": 283437,
+        "startTime": 1557386400
+        "endTime": 1557386699
+      }, ...
+  ]
+}
+
 ```
