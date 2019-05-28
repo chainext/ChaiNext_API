@@ -888,11 +888,11 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 | msg     | true | string |相关处理信息|    |
 | data   | true | object |单币最新价格相关数据|      |
 
-接口访问示例：https://coin.chainext.cn/v1/pegged
+接口访问示例：https://coin.chainext.cn/v1/pegged?index_id=297&tstart=1558960800&tend=1559025600
 
-* 现有稳定币
+现有稳定币
 
-| 币种名称             | CID  |
+| 币种名称              | CID  |
 | -------------------- | ---- |
 | bitUSD               | 351  |
 | Dai                  | 297  |
