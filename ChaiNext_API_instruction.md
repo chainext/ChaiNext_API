@@ -43,7 +43,7 @@ otherwise: [https://api.chainext.io/v1](https://api.chainext.io/v1)
 |Coin Indices List|[https://api.chainext.io/v1/coinlist](#coin-indices-list--get-coinlist)|GET|get coin indices list, currently including top 100 cryptocurrencies|
 |Coin Indices Performance|[https://api.chainext.io/v1/coin_detail](#coin-indices-performance--get-coin_detail)|GET|get coin indices performance, currently including top 100 cryptocurrencies|
 |Last Coin Index|[https://coin.chainext.cn/v1/coin_list_all](#last-coin-index--get-coin_list_all)|GET|get crypocurrencies realtime price, including most of the cryptocurrencies|
-|Stable Coin Index|[https://coin.chainext.cn/v1/pegged](#stable-coin-index--get-pegged)|GET|get stable currency price and volume history|
+|Stable Coin Index|[https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}](#stable-coin-index--get-pegged)|GET|get stable currency price and volume history|
 
 
 
@@ -860,7 +860,9 @@ Avaliable Stable Coin
 
 
 
-API access example：https://coin.chainext.cn/v1/pegged?index_id=297&tstart=1558960800&tend=1559025600
+API access example：https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}&ndex_id=297&tstart=1558960800&tend=1559025600
+
+please contact ChaiNext for authorization
 
 Response example: 
 ```python
