@@ -890,35 +890,49 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 接口访问示例：https://coin.chainext.cn/v1/pegged
 
+* 现有稳定币
+
+| 币种名称             | CID  |
+| -------------------- | ---- |
+| bitUSD               | 351  |
+| Dai                  | 297  |
+| Gemini Dollar        | 1929 |
+| Paxos Standard Token | 1927 |
+| sUSD                 | 1968 |
+| Tether               | 13   |
+| TrueUSD              | 481  |
+| USD Coin             | 1928 |
+| USDCoin              | 1969 |
+
 
 返回数据示例: 
 ```
-  {
+{
   "code": 1000,
   "msg": "",
   "data": [
-      {
+    {
+        "index_id": 297,
         "name": "DAI",
-        "index_id": 1,
-        "high": 1.02,
-        "open": 1.00,
-        "low": 0.99,
-        "close": 1.01,
-        "volume": 283487,
-        "startTime": 1557386700
-        "endTime": 1557386999
-      },
-      {
+        "high": 1.00051,
+        "open": 1.00051,
+        "low": 0.998944,
+        "close": 0.998944,
+        "volume": 0.49833320384,
+        "startTime": 1558960500,
+        "endTime": 1558960800
+    },
+    {
+        "index_id": 297,
         "name": "DAI",
-        "index_id": 1,
-        "high": 1.03,
-        "open": 1.01,
-        "low": 0.98,
-        "close": 1.00,
-        "volume": 283437,
-        "startTime": 1557386400
-        "endTime": 1557386699
-      }, ...
+        "high": 1.00055,
+        "open": 1.00009,
+        "low": 0.999812,
+        "close": 1.00055,
+        "volume": 0.38072716608,
+        "startTime": 1558960800,
+        "endTime": 1558961100
+    }, ...
   ]
 }
 
