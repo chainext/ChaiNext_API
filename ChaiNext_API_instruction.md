@@ -860,7 +860,7 @@ Avaliable Stable Coin
 
 
 
-API access example：https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}&ndex_id=297&tstart=1558960800&tend=1559025600
+API access example：https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}&index_id=297&tstart=1558960800&tend=1559025600
 
 please contact ChaiNext for authorization
 
