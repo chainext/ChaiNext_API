@@ -888,7 +888,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 | msg     | true | string |相关处理信息|    |
 | data   | true | object |单币最新价格相关数据|      |
 
-接口访问示例：https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}&ndex_id=297&tstart=1558960800&tend=1559025600
+接口访问示例：https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}&index_id=297&tstart=1558960800&tend=1559025600
 
 需要apikey请联系我们，请看官网
 
