@@ -48,7 +48,7 @@ RSS链接：https://doc.chainext.cn/feed/ 或者 https://doc.chainext.io/feed/
 |情绪指数表现|[https://api.chainext.io/v1/mood_index](#情绪指数表现--get-mood_index-获取情绪指数表现)|GET|获取情绪指数信息，目前包括BTC泡沫指数和USDT折溢价指数|
 |价格基准指数列表|[https://api.chainext.io/v1/coinlist](#价格基准指数列表--get-coinlist-获取价格基准指数列表)|GET|获取价格基准指数列表，目前包括市值排名前100的数字货币的价格基准指数列表|
 |价格基准指数表现|[https://api.chainext.io/v1/coin_detail](#价格基准指数表现--get-coin_detail-获取价格基准指数表现)|GET|获取价格基准指数信息，目前包括市值排名前100的数字货币的价格基准指数信息|
-|单币最新价格列表|[https://coin.chainext.cn/v1/coin_list_all](#单币最新价格列表--get-coin_list_all-获取单币最新价格列表)|GET|获取数字货币的实时最新价格，有市场上大多数数字货币的实时最新价格|
+|单币最新价格列表|[https://api.chainext.cn/v1/coin_list_all](#单币最新价格列表--get-coin_list_all-获取单币最新价格列表)|GET|获取数字货币的实时最新价格，有市场上大多数数字货币的实时最新价格|
 |稳定币指数|[https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}](#稳定币数据--get-pegged-获取稳定币数据)|GET|获取稳定币历史数据|
 
 ### 基本指数行情 <span id="v1/index_basic"> GET /index_basic 获取基本指数行情
@@ -852,7 +852,7 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 | msg     | true | string |相关处理信息|    |
 | data   | true | object |单币最新价格相关数据|      |
 
-接口访问示例：https://coin.chainext.cn/v1/coin_list_all?id=0
+接口访问示例：https://api.chainext.cn/v1/coin_list_all?id=0
 
 返回数据示例: 
 ```
