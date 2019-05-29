@@ -42,7 +42,7 @@ otherwise: [https://api.chainext.io/v1](https://api.chainext.io/v1)
 |Sentiment Indices Performance|[https://api.chainext.io/v1/mood_index](#sentiment-indices-performance--get-mood_index)|GET|get sentiment indices performance, currently including BTC Bubble Index and USDT Index|
 |Coin Indices List|[https://api.chainext.io/v1/coinlist](#coin-indices-list--get-coinlist)|GET|get coin indices list, currently including top 100 cryptocurrencies|
 |Coin Indices Performance|[https://api.chainext.io/v1/coin_detail](#coin-indices-performance--get-coin_detail)|GET|get coin indices performance, currently including top 100 cryptocurrencies|
-|Last Coin Index|[https://coin.chainext.cn/v1/coin_list_all](#last-coin-index--get-coin_list_all)|GET|get crypocurrencies realtime price, including most of the cryptocurrencies|
+|Last Coin Index|[https://api.chainext.cn/v1/coin_list_all](#last-coin-index--get-coin_list_all)|GET|get crypocurrencies realtime price, including most of the cryptocurrencies|
 |Stable Coin Index|[https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}](#stable-coin-index--get-pegged)|GET|get stable currency price and volume history|
 
 
@@ -693,7 +693,7 @@ Responce:
 | data   | true | object |indices list data|      |
 | updated_time| true | string |data updating time|      |
 
-API access example1：https://apitest.coinidx.pro/v1/coinlist?page=1&page_size=10
+API access example1：https://api.chainext.io/v1/coinlist?page=1&page_size=10
 
 Response example1: 
 ```
@@ -808,7 +808,7 @@ Responce:
 | msg     | true | string |related message|    |
 | data   | true | object |last coin price data|      |
 
-API access example：https://coin.chainext.cn/v1/coin_list_all?id=0
+API access example：https://api.chainext.cn/v1/coin_list_all?id=0
 
 Response example: 
 ```
