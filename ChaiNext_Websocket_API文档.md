@@ -42,9 +42,28 @@
 
     需要的参数说明如下:
 
-    * 加密的原始信息应为： "blockchain" + {apiKey1} + signTime
+    * 加密的原始信息应为： "blockchain" + apiKey + signTime
+
     * 私钥为apiSecret
+
     * signTime与服务器时间相差前后五分钟内有效
+
+    * 登录签名生成python代码示例
+
+      ```python
+      import hmac
+      import hashlib
+      import time
+      def hmac_sha256(key, value):
+          message = value.encode('utf-8')
+          return hmac.new(key.encode('utf-8'),message,digestmod=hashlib.sha256).hexdigest()
+      api_key = 'key'
+      api_secret = 'secret'
+      time_now = str(int(time.time()))
+      signature = hmac_sha256(api_secret,"blockchain"+api_key + time_now)
+      ```
+
+      
 
 * 登录返回信息
 * 登录成功
@@ -103,7 +122,7 @@
     {
       "op": "subscribe",
       "args": {
-          "topic": "index_data",
+          "topic": "coin_index",
           "id": "1"
       }
     }
@@ -115,7 +134,7 @@
     {
         "op": "subscribeResponse",
         "args": {
-            "topic": "index_data",
+            "topic": "coin_index",
             "id": "1",
             "info": "success",
             "code": 2001
@@ -130,7 +149,7 @@
     {
       "op": "subscribeResponse",
       "args": {
-          "topic": "index_data",
+          "topic": "coin_index",
           "id": "1",
           "info": "already subscribed",
           "code": 3005
@@ -147,7 +166,7 @@
     {
       "op": "unsubscribe",
       "args": {
-          "topic": "index_data",
+          "topic": "coin_index",
           "id": "1"
       }
     
@@ -161,7 +180,7 @@
     {
       "op": "unsubscribeResponse",
       "args": {
-          "topic": "index_data",
+          "topic": "coin_index",
           "id": "1",
           "info": "success",
           "code": 2001
@@ -176,7 +195,7 @@
     {
       "op": "unsubscribeResponse",
       "args": {
-          "topic": "index_data",
+          "topic": "coin_index",
           "id": "1",
           "info": "coin not subscribed",
           "code": 3008
@@ -209,7 +228,8 @@
     | cmcSymbol  | String  | 该币种在coinmarketcap上的symbol |
     | latest     | String  |          该币种最新价           |
     | updateTime |  Long   |            更新时间             |
-
+    
+    cid对照表请参考https://api.chainext.io/v1/coin_mapping_list
 
 * pair_index
 
@@ -283,6 +303,7 @@
     | turnover24h | String  |          该币种最新价           |
     | updateTime  |  Long   |            更新时间             |
 
+    indexId对照表请参考https://api.chainext.io/v1/mapping_list
 ### code信息码
 
 * 返回信息
