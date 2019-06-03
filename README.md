@@ -22,3 +22,4 @@ english version：[ChaiNext_API_instruction.md](https://github.com/chainext/Chai
 * 2018-08-16 增加tradingview的接口
 * 2018-09-16 [系列的接口升级](https://github.com/chainext/ChaiNext_API/blob/master/upgrade_records/20180916)
 * 2018-10-15 增加coin_list_all的接口文档
+* 2019-05-28 增加pegged的接口文档
