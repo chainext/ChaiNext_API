@@ -890,21 +890,21 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 接口访问示例：https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}&index_id=297&tstart=1558960800&tend=1559025600
 
-需要apikey请联系我们，请看官网
+需要apikey请联系我们
 
 现有稳定币
 
-| 币种名称              | CID  |
-| -------------------- | ---- |
-| bitUSD               | 351  |
-| Dai                  | 297  |
-| Gemini Dollar        | 1929 |
-| Paxos Standard Token | 1927 |
-| sUSD                 | 1968 |
-| Tether               | 13   |
-| TrueUSD              | 481  |
-| USD Coin             | 1928 |
-| USDCoin              | 1969 |
+| 币种名称              | CID  | 官网页面 |
+| -------------------- | ---- | --------------------- |
+| bitUSD               | 351  | http://bit.ly/BitShares_USD |
+| Dai                  | 297  | https://makerdao.com/ |
+| Gemini Dollar        | 1929 | https://gemini.com/dollar/ |
+| Paxos Standard Token | 1927 | https://www.paxos.com/pax/ |
+| sUSD                 | 1968 | https://www.synthetix.io/ |
+| Tether               | 13   | https://tether.to/ |
+| TrueUSD              | 481  | https://www.trusttoken.com/ |
+| USD Coin             | 1928 | https://www.centre.io/usdc |
+| USDCoin              | 1969 | https://www.usc.us/ |
 
 
 返回数据示例: 
