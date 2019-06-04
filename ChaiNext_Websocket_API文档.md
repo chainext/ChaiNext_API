@@ -13,7 +13,10 @@
 
 * 登录方式：
 
-    登录网址 ws://{ip}:{port}/websocket
+    登录网址1 wss://vipapi.chainext.cn/websocket (国内访问）
+    
+    登陆网址2 wss://vipapi.chainext.io/websocket （国际访问）
+    
     * 发送登录
 
     ```json
@@ -32,9 +35,11 @@
     | 字段名称  |  类型  |                    说明                     |
     | --------- | :----: | :-----------------------------------------: |
     | signTime  |  Long  | 用于计算signature的时间戳，十位长度精确到秒 |
-    | apiKey    | String |       API 访问账号，由我们生成给用户        |
-    | apiSecret | String |       API 访问密码，由我们生成给用户        |
+    | apiKey    | String |       API 访问账号，由ChaiNext生成给用户        |
+    | apiSecret | String |       API 访问密码，由ChaiNext生成给用户        |
     | signature | String |           签名，签名算法如下详解            |
+    
+    需要apiKey和apiSecret，请联系ChaiNext
 
     注：signature 生成算法：
 
