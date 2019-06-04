@@ -13,7 +13,7 @@
 
 * 登录方式：
 
-    登录网址1 wss://vipapi.chainext.cn/websocket (国内访问）
+    登录网址1 wss://vipapi.chainext.cn/websocket  (国内访问）
     
     登陆网址2 wss://vipapi.chainext.io/websocket （国际访问）
     
