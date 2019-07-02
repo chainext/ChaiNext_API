@@ -92,7 +92,7 @@ signature = HEX(HMAC_SHA256(apiSecret,verb+path+str(signTime))
 
 ```json
 {
-  "code": "",
+  "code": "000000",
   "message": "",
   "requestId": "",
   "data": {}
