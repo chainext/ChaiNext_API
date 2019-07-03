@@ -1,13 +1,13 @@
 #### 通用字段定义
 
-| 字段  | 含义                                               |
-| ----- | -------------------------------------------------- |
-| op    | 事件主题                                           |
-| args  | 传送信息内容                                       |
-| info  | 成功或失败原因                                     |
+| 字段    | 含义                                      |
+|-------|-----------------------------------------|
+| op    | 事件主题                                    |
+| args  | 传送信息内容                                  |
+| info  | 成功或失败原因                                 |
 | topic | 订阅数据类型（目前有index_data, index_data_type2） |
-| id    | 币种id                                             |
-| code  | 信息码                                             |
+| id    | 币种id                                    |
+| code  | 信息码                                     |
 
 #### 登录
 
@@ -332,29 +332,38 @@
 
 * 返回信息
 
-| code | 事件                     | 提示文本                                                    |
-| ---- | ------------------------ | ----------------------------------------------------------- |
-| 2001 | 成功                     | success                                                     |
-| 2002 | 参数错误                 | wrong param                                                 |
-| 2003 | 密码错误                 | wrong password                                              |
-| 2004 | 重复登陆                 | double login                                                |
+| code | 事件               | 提示文本                                                        |
+|------|------------------|-------------------------------------------------------------|
+| 2001 | 成功               | success                                                     |
+| 2002 | 参数错误             | wrong param                                                 |
+| 2003 | 密码错误             | wrong password                                              |
+| 2004 | 重复登陆             | double login                                                |
 | 2005 | 权限错误，请联系chainext | unauthorized access, please contact ChaiNext for permission |
-| 2006 | 登出成功                 | logout success                                              |
-| 2009 | 数据转换出错             | data transfer error                                         |
-| 2010 | 登录状态出错，请重新登陆 | login status error, please login again                      |
-| 2011 | 未知错误                 | unknown error                                               |
-| 2013 | 用户不存在               | user absent                                                 |
+| 2006 | 登出成功             | logout success                                              |
+| 2009 | 数据转换出错           | data transfer error                                         |
+| 2010 | 登录状态出错，请重新登陆     | login status error, please login again                      |
+| 2011 | 未知错误             | unknown error                                               |
+| 2013 | 用户不存在            | user absent                                                 |
 
 * 事件事务
 
-| code | 事件                         | 提示文本             |
-| ---- | ---------------------------- | -------------------- |
-| 3001 | 事件不存在                   | event absent         |
-| 3002 | 订阅成功                     | success              |
-| 3004 | 取消订阅成功                 | unsubscribe success  |
-| 3005 | 重复订阅                     | already subscribed   |
-| 3006 | 主题不存在                   | topic absent         |
-| 3007 | 币种不存在                   | coin absent          |
+| code | 事件             | 提示文本                 |
+|------|----------------|----------------------|
+| 3001 | 事件不存在          | event absent         |
+| 3002 | 订阅成功           | success              |
+| 3004 | 取消订阅成功         | unsubscribe success  |
+| 3005 | 重复订阅           | already subscribed   |
+| 3006 | 主题不存在          | topic absent         |
+| 3007 | 币种不存在          | coin absent          |
 | 3008 | 尚未订阅该币种，无法取消订阅 | coin not subscribed  |
 | 3009 | 尚未订阅该指数，无法取消订阅 | index not subscribed |
-| 3010 | 指数不存在                   | index absent         |
+| 3010 | 指数不存在          | index absent         |
+
+* 可订阅主题
+
+| topic      | 介绍     | 订阅字段 |
+|------------|--------| :------:|
+| coin_index | 单币信息   | id   |
+| pair_index | 交易对信息  | id   |
+| index      | 大盘指数信息 | id   |
+
