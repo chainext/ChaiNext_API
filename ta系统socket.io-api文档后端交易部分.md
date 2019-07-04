@@ -531,14 +531,16 @@ signature = HEX(HMAC_SHA256(apiSecret,verb+path+str(signTime))
   "requestId": "asdfgd",
   "data": {
         "collectiveId": "26e447934c0141fb9f44e9c766b9538a",
-		"completeOrderList": [{
+        "orderCounts": 1,
+        "completeOrderList": [{
           "orderId": "asdfnasdlfkjgbfiawlerojgvbipesajfgvailujr1",
-          "status": 3
+          "fundId": 1,
+          "amount": "2",
+          "side": -1,
+          "deliveryPrice": "189728",
+          "currencyId": 1,
+          "status": 4,
           "reason": ""
-        },{
-          "orderId": "asdfnasdlfkjgbfiawlerojgvbipesajfgvailu34d",
-          "status": 3
-          "reason": ""  
         }]
   }
 }
@@ -551,10 +553,16 @@ signature = HEX(HMAC_SHA256(apiSecret,verb+path+str(signTime))
 | code          | String     | 返回信息码                           |
 | message       | String     | 返回结果描述信息                     |
 | requestId     | String     | 请求流水 ID(UUID 生成唯一 id 传过来) |
-| collectiveId  |   String   |             集合订单 ID              |
-| orderId       |   String   |               订单 ID                |
-| status        | Integer    | 订单状态，3表示正在执行, 4表示执行成功，6表示执行失败|
-| reason        |   String   |         非必填，执行失败原因         |
+| collectiveId  |  String   |             集合订单 ID              |
+| orderCounts   | Integer    |       订单的数量                     |
+| orderId       |  String   |               订单 ID                |
+| fundId        |  Integer   |               基金 ID                |
+| amount        |  String   |               基金份数               |
+| side          |  Integer   |  申赎方向：1 表示申购，-1 表示赎回   |
+| deliveryPrice |  String   |                执行价                |
+| currencyId    |  Integer   |                币种 ID             |
+| status        |  Integer   |   订单状态，3表示正在执行, 4表示执行成功，6表示执行失败  |
+| reason        |  String   |         非必填，执行失败原因         |
 
 
 ### fund_quote_ta
