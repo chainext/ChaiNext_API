@@ -44,6 +44,7 @@ otherwise: [https://api.chainext.io/v1](https://api.chainext.io/v1)
 |Coin Indices Performance|[https://api.chainext.io/v1/coin_detail](#coin-indices-performance--get-coin_detail)|GET|get coin indices performance, currently including top 100 cryptocurrencies|
 |Last Coin Index|[https://api.chainext.cn/v1/coin_list_all](#last-coin-index--get-coin_list_all)|GET|get crypocurrencies realtime price, including most of the cryptocurrencies|
 |Stable Coin Index|[https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}](#stable-coin-index--get-pegged)|GET|get stable currency price and volume history|
+|Last Index|[https://api.chainext.io/v1/index_realtime](#last-index--get-index_realtime)|GET|get index realtime data, including price, marketCap and turnover|
 
 
 
@@ -896,4 +897,50 @@ Response example:
 }
 
 
+```
+
+
+## Last Index  <span id="v1/index_realtime"> GET /index_realtime
+
+Request parameters:
+
+null
+
+Responce: 
+
+| Name | Required  | Type     | Description  | Range  |
+| ------ | ---- | ------ | ----------- | ------ |
+| code | true | string | response result    |1000,1001,1002|
+| msg     | true | string |related message|    |
+| data   | true | object |last coin price data|      |
+| updated_time| true | string |data updating time|      |
+
+API access example：https://api.chainext.io/v1/index_realtime
+
+Response example: 
+```
+{
+  "msg": "",
+  "updated_time": 1562214072,
+  "code": 1000,
+  "data": [
+    {
+      "indexId": 1,
+      "indexCode": "csi10X",
+      "lastPrice": "2946.522825168813849624789268",
+      "marketCap": "82096273083.3017056",
+      "turnover": "21128649724.115504",
+      "updateTime": 1562214069
+    },
+    {
+      "indexId": 2,
+      "indexCode": "csi10",
+      "lastPrice": "1107.532109466394737066796435",
+      "marketCap": "293119075844.4470656",
+      "turnover": "49807628976.405104",
+      "updateTime": 1562214069
+    },
+    ...
+  ]
+}
 ```
