@@ -33,10 +33,6 @@ otherwise: [https://api.chainext.io/v1](https://api.chainext.io/v1)
 |Candlestick chart|[https://api.chainext.io/v1/kchart](#index-candlestick-chart--get-kchart)|GET|get candlestick chart of CSI indices|
 |Mapping list|[https://api.chainext.io/v1/mapping_list](#index-mapping-list--get-mapping_list)|GET|Get mapping list between CSI indices' CID and their names|
 |Coin mapping list|[https://api.chainext.io/v1/coin_mapping_list](#coin-mapping-list--get-coin_mapping_list)|GET|Get mapping list between coins' CID and their names|
-|Daily broadcast|[https://api.chainext.io/v1/wechat_broadcast](#index-daily-broadcast--get-wechat_broadcast)|GET|Get daily broadcast of CSI indices|
-|Hourly broadcast|[https://api.chainext.io/v1/wechat_hour_broadcast](#index-hourly-broadcast--get-wechat_hour_broadcast)|GET|get hourly broadcast of CSI indices|
-|Minute performance monitor information|[https://api.chainext.io/v1/wechat_monitor_min](#index-minute-monitor-information--get-wechat_monitor_min)|GET|get minute performance monitor information of CSI indices|
-|Hour performance monitor information|[https://api.chainext.io/v1/wechat_monitor_24h](#index-hour-monitor-information--get-wechat_monitor_24h)|GET|get hour performance monitor information of CSI indices|
 |Coin transfer alert information|[https://api.chainext.io/v1/largement_alert](#coin-transfer-alert--get-largement_alert)|GET|get coin transfer alert information|
 |Sentiment Indices List|[https://api.chainext.io/v1/mood_indices](#sentiment-indices-list--get-mood_indices)|GET|get sentiment indices list, currently including BTC Bubble Index and USDT Index|
 |Sentiment Indices Performance|[https://api.chainext.io/v1/mood_index](#sentiment-indices-performance--get-mood_index)|GET|get sentiment indices performance, currently including BTC Bubble Index and USDT Index|
@@ -266,7 +262,7 @@ Response:
 | msg     | true | string |related message|    |
 | data   | true | object |index candlestick chart data|      |
 
-API access example：https://api.chainext.io/v1/kchart?id=4&grouping=1H&tstart=1526798662&tend=1531983011
+API access example：https://api.chainext.io/v1/kchart?id=4&grouping=1D&tstart=1530316800&tend=1531983011
 
 Response example: 
 ```
@@ -348,174 +344,6 @@ Response example:
 ```
 
 
-
-## Index Daily Broadcast <span id="v1/wechat_broadcast"> GET /wechat_broadcast
-
-Request parameters:
-
-| Name | Required  | Type     | Description  | Default   | Range  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| date      | true  | string | query date, e.g. 2018-07-24 | ||
-
-
-Response: 
-
-| Name | Required  | Type     | Description  | Range  |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | response result    |1000,1001,1002|
-| msg     | true | string |related message|    |
-| data   | true | object |daily broadcast |      |
-
-API access example：https://api.chainext.io/v1/wechat_broadcast?date=2018-08-02
-
-Response example: 
-```
-  {
-  "code": 1000,
-  "msg": "",
-  "data": [
-    {
-      "total": 2,
-      "current_page": 1,
-      "data": {
-        "time": "2018-07-21 07:59:37",
-        "content": "CSI指数收盘播报\r\n\r\n北京时间2018年08月02日07时59分\r\n\r\n「CSI100」指数报1013.96点,全日涨跌幅为-1.31%。成分币中14上涨，86下跌。涨幅居前为「PPT」(14.19%)、「XMR」(4.91%)、「DOGE」(3.41%)。\r\n\r\n「CSI21-100」指数报6986.63点,全日涨跌幅为-2.19%。成分币中11上涨，69下跌。涨幅居前为「PPT」(14.19%)、「DOGE」(3.41%)、「INK」(2.88%)。\r\n\r\n「CSI5」指数报800.43点,全日涨跌幅为-1.28%。成分币中1上涨，4下跌。涨幅居前为「XRP」(2.77%)。\r\n\r\n「CSI6-20」指数报5160.35点,全日涨跌幅为-1.08%。成分币中2上涨，13下跌。涨幅居前为「XMR」(4.91%)、「DASH」(0.47%)。\r\n\r\n「CSI」指数系列：ChaiNext规模指数（ChaiNext Scale Index，以下简称CSI指数）是由ChaiNext团队按照规模、流动性和可投资性综合排名情况编制的通证市场系列指数，包含13条覆盖不同市值区间的指数，是市场上代表性最强的指数。\r\n\r\n\r\n本信息由企业级数字货币指数服务商ChaiNext提供。\r\nhttps://chainext.io|微信公众号ChaiNext"
-      }
-    }
-  ]
-}
-```
-
-
-
-
-## Index Hourly Broadcast <span id="v1/wechat_hour_broadcast"> GET /wechat_hour_broadcast
-
-Request parameters:
-
-| Name | Required  | Type     | Description  | Default   | Range  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| id      | true  | integer | index CID or index name | ||
-| date      | true  | string | query date, e.g. 2018-07-24 | ||
-
-
-Response: 
-
-| Name | Required  | Type     | Description  | Range  |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | response result    |1000,1001,1002|
-| msg     | true | string |related message|    |
-| data   | true | object |hourly broadcast |      |
-
-API access example：https://api.chainext.io/v1/wechat_hour_broadcast?id=11&date=2018-08-02
-
-Response example: 
-```
-  {
-  "code": 1000,
-  "msg": "",
-  "data": [
-    {
-      "total": 100,
-      "data": [
-        {
-        "time": "2018-08-02 10:00:26",
-        "content": 	"指数点位整点播报 北京时间2018年08月02日10:00，「CSI100」指数报1020.38点,全日涨跌幅为0.84%。成分币中77上涨，23下跌。涨幅居前为「WTC」(19.97%)、「PAY」(9.49%)、「ARDR」(5.51%)。\r\n\r\n「CSI100」：CSI系列指数中的\"上证综指\"，样本由规模和流动性排名前100的通证组成，市值覆盖率达96%，反映了通证市场整体走势。\r\n本信息由企业级数字货币指数服务商ChaiNext提供。\r\nhttps://chainext.io|微信公众号ChaiNext"
-        }
-      ]
-    }
-  ]
-}
-```
-
-
-
-## Index Minute Monitor Information <span id="v1/wechat_monitor_min"> GET /wechat_monitor_min
-
-Request parameters:
-
-| Name | Required  | Type     | Description  | Default   | Range  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| id      | true  | integer | index CID or index name | ||
-| date      | true  | string | query date, e.g. 2018-07-24 | ||
-
-
-Response: 
-
-| Name | Required  | Type     | Description  | Range  |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | response result    |1000,1001,1002|
-| msg     | true | string |related message|    |
-| data   | true | object |minute monitor information |      |
-
-API access example：https://api.chainext.io/v1/wechat_monitor_min?id=csi100&date=2018-08-02
-
-Response example: 
-```
-  {
-  "code": 1000,
-  "msg": "",
-  "data": [
-    {
-      "total": 100,
-      "data": [
-        {
-        "time": "2018-08-02 10:00:26",
-        "content": 	"CSI指数快速波动预警\r\n2018年08月02日06时09分-06时19分,CSI100指数10min快速上涨1.22%,目前报1005.17点。\r\n成分币中8上涨，92下跌。涨幅居前为「PPT」(9.45%)、「BCD」(3.84%)、「DOGE」(2.30%)。\r\n\r\n「CSI100」：CSI系列指数中的\"上证综指\"，样本由规模和流动性排名前100的通证组成，市值覆盖率达96%，反映了通证市场整体走势。\r\n\r\n本信息由企业级数字货币指数服务商ChaiNext提供。\r\nhttps://chainext.io|微信公众号ChaiNext"
-        }
-      ]
-    }
-  ]
-}
-```
-
-
-
-
-
-
-## Index Hour Monitor Information <span id="v1/wechat_monitor_24h"> GET /wechat_monitor_24h
-
-Request parameters:
-
-| Name | Required  | Type     | Description  | Default   | Range  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| id      | true  | integer | index CID or index name | ||
-| date      | true  | string | query date, e.g. 2018-07-24 | ||
-
-
-Response: 
-
-| Name | Required  | Type     | Description  | Range  |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | response result    |1000,1001,1002|
-| msg     | true | string |related message|    |
-| data   | true | object |hour monitor information |      |
-
-API access example：https://api.chainext.io/v1/wechat_monitor_24h?id=csi100&date=2018-08-01
-
-Response example: 
-```
-  {
-  "code": 1000,
-  "msg": "",
-  "data": [
-    {
-      "total": 100,
-      "data": [
-        {
-        "time": "2018-08-01 07:19:55",
-        "content": "CSI指数行情大幅涨跌预警\r\n北京时间2018年08月01日07时19分,CSI100指数今日（UTC0起）累计下跌-5.49%,目前报1026.24点。\r\n其中,成分币中2上涨,98下跌。其中,涨幅居前为「BNB」(5.92%)。「XVG」(0.44%)。\r\n\r\n「CSI100」：CSI指数系列中的\"上证综指\"，样本由规模和流动性排名前100的通证组成，市值覆盖率达96%，反映了通证市场整体走势。\r\n\r\n本信息由企业级数字货币指数服务商ChaiNext提供。\r\nhttps://chainext.io|微信公众号ChaiNext"
-        }
-      ]
-    }
-  ]
-}
-```
-
-
-
-
 ## Coin Transfer Alert <span id="v1/largement_alert"> GET /largement_alert
 
 Request parameters:
@@ -534,9 +362,7 @@ Response:
 | msg     | true | string |related message|    |
 | data   | true | object |coin transfer alert |      |
 
-API access example 1：https://api.chainext.io/v1/largement_alert?id=0&date=2018-07-31
-
-API access example 2：https://api.chainext.io/v1/largement_alert
+API access example 1：https://api.chainext.io/v1/largement_alert?id=0
 
 Response example: 
 ```
@@ -944,3 +770,11 @@ Response example:
   ]
 }
 ```
+
+## code return type
+
+| code | msg | type |
+| :-: | :-: | :-: |
+|1000 | "" | success | 
+|1001 | "data not ready" | no data | 
+|1002 | "wrong parameter" | the parameter input has something wrong | 
