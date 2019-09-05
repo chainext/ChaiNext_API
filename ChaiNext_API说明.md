@@ -33,40 +33,42 @@ API访问地址：
 RSS链接：https://doc.chainext.cn/feed/ 或者 https://doc.chainext.io/feed/
 
 ## API 接口说明
-| 接口数据类型 | 请求方法 | 类型     | 描述  |
-| ------------ | ----- | ------ | ----- |
-|基本指数行情|[https://api.chainext.io/v1/index_basic](#基本指数行情)|GET|获取指数的基本行情|
-|权重|[https://api.chainext.io/v1/weight](#指数权重信息--get-weight-获取指数的权重信息)|GET|获取指数的权重信息|
-|通证指数列表|[https://api.chainext.io/v1/index_list](#通证指数列表信息--get-index_list-获取通证指数列表信息)|GET|获取通证指数列表信息|
-|通证指数表现|[https://api.chainext.io/v1/index_detail](#通证指数表现相关信息--get-index_detail-获取指数表现相关信息)|GET|获取通证指数在指定时段段内的表现相关信息|
-|tradingview中调用chainext的K线|[https://chainext.cn/tradingview](#直接调用chainext在tradingview上的数据)|GET|直接调用chainext在tradingview上的数据|
-|K线图|[https://api.chainext.io/v1/kchart](#指数k线图)|GET|获取指数K线图|
-|指数CID映射表|[https://api.chainext.io/v1/mapping_list](#单币cid与指数名称对应表--get-coin_mapping_list-获取单币cid与单币名称的相关说明)|GET|获取指数CID与指数名称的相关说明|
-|单币CID映射表|[https://api.chainext.io/v1/coin_mapping_list](#单币cid与指数名称对应表--get-coin_mapping_list-获取单币cid与单币名称的相关说明)|GET|获取单币CID与单币名称的相关说明|
-|代币大额转账报警|[https://api.chainext.io/v1/largement_alert](#代币大额转账报警信息--get-largement_alert-获取代币大额转账报警信息)|GET|获取代币大额转账报警信息|
-|情绪指数列表|[https://api.chainext.io/v1/mood_indices](#情绪指数列表--get-mood_indices-获取情绪指数列表)|GET|获取情绪指数列表，目前包括BTC泡沫指数和USDT折溢价指数|
-|情绪指数表现|[https://api.chainext.io/v1/mood_index](#情绪指数表现--get-mood_index-获取情绪指数表现)|GET|获取情绪指数信息，目前包括BTC泡沫指数和USDT折溢价指数|
-|价格基准指数列表|[https://api.chainext.io/v1/coinlist](#价格基准指数列表--get-coinlist-获取价格基准指数列表)|GET|获取价格基准指数列表，目前包括市值排名前100的数字货币的价格基准指数列表|
-|价格基准指数表现|[https://api.chainext.io/v1/coin_detail](#价格基准指数表现--get-coin_detail-获取价格基准指数表现)|GET|获取价格基准指数信息，目前包括市值排名前100的数字货币的价格基准指数信息|
-|单币最新价格列表|[https://api.chainext.cn/v1/coin_list_all](#单币最新价格列表--get-coin_list_all-获取单币最新价格列表)|GET|获取数字货币的实时最新价格，有市场上大多数数字货币的实时最新价格|
-|稳定币指数|[https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}](#稳定币数据--get-pegged-获取稳定币数据)|GET|获取稳定币历史数据|
-|指数最新数据列表|[https://api.chainext.cn/v1/index_realtime](#指数最新数据列表--get-index_realtime-获取所有指数最新数据)|GET|获取指数最新数据|
+| 接口数据类型                    | 请求方法                                                                                                    | 类型  | 描述                                    |
+|---------------------------|---------------------------------------------------------------------------------------------------------|-----|---------------------------------------|
+| 基本指数行情                    | [https://api.chainext.io/v1/index_basic](#基本指数行情)                                                       | GET | 获取指数的基本行情                             |
+| 权重                        | [https://api.chainext.io/v1/weight](#指数权重信息--get-weight-获取指数的权重信息)                                      | GET | 获取指数的权重信息                             |
+| 通证指数列表                    | [https://api.chainext.io/v1/index_list](#通证指数列表信息--get-index_list-获取通证指数列表信息)                           | GET | 获取通证指数列表信息                            |
+| 通证指数表现                    | [https://api.chainext.io/v1/index_detail](#通证指数表现相关信息--get-index_detail-获取指数表现相关信息)                     | GET | 获取通证指数在指定时段段内的表现相关信息                  |
+| tradingview中调用chainext的K线 | [https://chainext.cn/tradingview](#直接调用chainext在tradingview上的数据)                                        | GET | 直接调用chainext在tradingview上的数据          |
+| K线图                       | [https://api.chainext.io/v1/kchart](#指数k线图)                                                             | GET | 获取指数K线图                               |
+| 指数CID映射表                  | [https://api.chainext.io/v1/mapping_list](#单币cid与指数名称对应表--get-coin_mapping_list-获取单币cid与单币名称的相关说明)      | GET | 获取指数CID与指数名称的相关说明                     |
+| 单币CID映射表                  | [https://api.chainext.io/v1/coin_mapping_list](#单币cid与指数名称对应表--get-coin_mapping_list-获取单币cid与单币名称的相关说明) | GET | 获取单币CID与单币名称的相关说明                     |
+| 代币大额转账报警                  | [https://api.chainext.io/v1/largement_alert](#代币大额转账报警信息--get-largement_alert-获取代币大额转账报警信息)             | GET | 获取代币大额转账报警信息                          |
+| 单种代币大额转账详细信息              | [https://api.chainext.io/v1/largement_alert_new](#单种代币大额转账详细信息--get-largement_alert_new-单种代币大额转账详细信息)   | GET | 单种代币大额转账详细信息                          |
+| 全部代币大额转账详细信息              | [https://api.chainext.io/v1/largement_alert_all](#全部代币大额转账详细信息--get-largement_alert_all-全部代币大额转账详细信息)   | GET | 全部代币大额转账详细信息                          |
+| 情绪指数列表                    | [https://api.chainext.io/v1/mood_indices](#情绪指数列表--get-mood_indices-获取情绪指数列表)                           | GET | 获取情绪指数列表，目前包括BTC泡沫指数和USDT折溢价指数        |
+| 情绪指数表现                    | [https://api.chainext.io/v1/mood_index](#情绪指数表现--get-mood_index-获取情绪指数表现)                               | GET | 获取情绪指数信息，目前包括BTC泡沫指数和USDT折溢价指数        |
+| 价格基准指数列表                  | [https://api.chainext.io/v1/coinlist](#价格基准指数列表--get-coinlist-获取价格基准指数列表)                               | GET | 获取价格基准指数列表，目前包括市值排名前100的数字货币的价格基准指数列表 |
+| 价格基准指数表现                  | [https://api.chainext.io/v1/coin_detail](#价格基准指数表现--get-coin_detail-获取价格基准指数表现)                         | GET | 获取价格基准指数信息，目前包括市值排名前100的数字货币的价格基准指数信息 |
+| 单币最新价格列表                  | [https://api.chainext.cn/v1/coin_list_all](#单币最新价格列表--get-coin_list_all-获取单币最新价格列表)                     | GET | 获取数字货币的实时最新价格，有市场上大多数数字货币的实时最新价格      |
+| 稳定币指数                     | [https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}](#稳定币数据--get-pegged-获取稳定币数据)                        | GET | 获取稳定币历史数据                             |
+| 指数最新数据列表                  | [https://api.chainext.cn/v1/index_realtime](#指数最新数据列表--get-index_realtime-获取所有指数最新数据)                   | GET | 获取指数最新数据                              |
 
 ### 基本指数行情 <span id="v1/index_basic"> GET /index_basic 获取基本指数行情
 请求参数: 
 
-| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| id       | true  | string | 指数CID或指数名称  | 1 |由指数CID范围决定|
+| 参数名称 | 是否必须 | 类型     | 描述         | 默认值 | 取值范围       |
+|------|------|--------|------------|-----|------------|
+| id   | true | string | 指数CID或指数名称 | 1   | 由指数CID范围决定 |
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |基本指数行情数据|      |
-| updated_time| true | string |数据更新时间|      |
+| 参数名称         | 是否必须 | 数据类型   | 描述       | 取值范围           |
+|--------------|------|--------|----------|----------------|
+| code         | true | string | 请求处理结果   | 1000,1001,1002 |
+| msg          | true | string | 相关处理信息   |                |
+| data         | true | object | 基本指数行情数据 |                |
+| updated_time | true | string | 数据更新时间   |                |
 
 接口访问示例：https://api.chainext.io/v1/index_basic?id=1
 
@@ -107,18 +109,18 @@ RSS链接：https://doc.chainext.cn/feed/ 或者 https://doc.chainext.io/feed/
 ## 指数权重信息 <span id="v1/weight"> GET /weight 获取指数的权重信息
 请求参数: 
 
-| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| id       | true  | string | 指数CID或指数名称  | 1 |由指数CID范围决定|
+| 参数名称 | 是否必须 | 类型     | 描述         | 默认值 | 取值范围       |
+|------|------|--------|------------|-----|------------|
+| id   | true | string | 指数CID或指数名称 | 1   | 由指数CID范围决定 |
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |指数权重数据|      |
-| updated_time| true | string |数据更新时间|      |
+| 参数名称         | 是否必须 | 数据类型   | 描述     | 取值范围           |
+|--------------|------|--------|--------|----------------|
+| code         | true | string | 请求处理结果 | 1000,1001,1002 |
+| msg          | true | string | 相关处理信息 |                |
+| data         | true | object | 指数权重数据 |                |
+| updated_time | true | string | 数据更新时间 |                |
 
 接口访问示例：https://api.chainext.io/v1/weight?id=4
 
@@ -148,20 +150,20 @@ RSS链接：https://doc.chainext.cn/feed/ 或者 https://doc.chainext.io/feed/
 ## 通证指数列表信息 <span id="v1/index_list"> GET /index_list 获取通证指数列表信息
 请求参数: 
 
-| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| page       | true  | integer | 页码 | 1 |由指数数量决定|
-| page_size       | true  | integer | 每页数量  | 20 |由指数数量决定|
-| price7       | false  | integer | 是否需要7日数据  | 1 |0，1|
+| 参数名称      | 是否必须  | 类型      | 描述       | 默认值 | 取值范围    |
+|-----------|-------|---------|----------|-----|---------|
+| page      | true  | integer | 页码       | 1   | 由指数数量决定 |
+| page_size | true  | integer | 每页数量     | 20  | 由指数数量决定 |
+| price7    | false | integer | 是否需要7日数据 | 1   | 0，1     |
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |指数列表数据|      |
-| updated_time| true | string |数据更新时间|      |
+| 参数名称         | 是否必须 | 数据类型   | 描述     | 取值范围           |
+|--------------|------|--------|--------|----------------|
+| code         | true | string | 请求处理结果 | 1000,1001,1002 |
+| msg          | true | string | 相关处理信息 |                |
+| data         | true | object | 指数列表数据 |                |
+| updated_time | true | string | 数据更新时间 |                |
 
 接口访问示例1：https://api.chainext.io/v1/index_list?page=1&page_size=20
 
@@ -235,19 +237,19 @@ RSS链接：https://doc.chainext.cn/feed/ 或者 https://doc.chainext.io/feed/
 
 请求参数:
 
-| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| id       | true  | integer | 指数CID | 1 |指数范围内|
-| tstart       | true  | integer | 开始时间 | |Unix时间戳（单位：秒，例如：1530691531）|
-| tend       | true  | integer | 结束时间 | |Unix时间戳（单位：秒，例如：1530691531）|
+| 参数名称   | 是否必须 | 类型      | 描述    | 默认值 | 取值范围                        |
+|--------|------|---------|-------|-----|-----------------------------|
+| id     | true | integer | 指数CID | 1   | 指数范围内                       |
+| tstart | true | integer | 开始时间  |     | Unix时间戳（单位：秒，例如：1530691531） |
+| tend   | true | integer | 结束时间  |     | Unix时间戳（单位：秒，例如：1530691531） |
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |指数表现相关数据|      |
+| 参数名称 | 是否必须 | 数据类型   | 描述       | 取值范围           |
+|------|------|--------|----------|----------------|
+| code | true | string | 请求处理结果   | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息   |                |
+| data | true | object | 指数表现相关数据 |                |
 
 接口访问示例：https://api.chainext.io/v1/index_detail?id=1&tstart=1520091531&tend=1530687931
 
@@ -292,20 +294,20 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 请求参数:
 
-| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| id       | true  | integer | 指数CID | 1 |指数范围内|
-| tstart       | true  | integer | 开始时间 | |Unix时间戳（单位：秒，例如：1530691531）|
-| tend       | true  | integer | 结束时间 | |Unix时间戳（单位：秒，例如：1530691531）|
-| grouping       | true  | string | 时间间隔 | |1min,5min,15min,30min,1H,4h,6h,12h,1D,1w,1m|
+| 参数名称     | 是否必须 | 类型      | 描述    | 默认值 | 取值范围                                        |
+|----------|------|---------|-------|-----|---------------------------------------------|
+| id       | true | integer | 指数CID | 1   | 指数范围内                                       |
+| tstart   | true | integer | 开始时间  |     | Unix时间戳（单位：秒，例如：1530691531）                 |
+| tend     | true | integer | 结束时间  |     | Unix时间戳（单位：秒，例如：1530691531）                 |
+| grouping | true | string  | 时间间隔  |     | 1min,5min,15min,30min,1H,4h,6h,12h,1D,1w,1m |
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |指数K线图|      |
+| 参数名称 | 是否必须 | 数据类型   | 描述     | 取值范围           |
+|------|------|--------|--------|----------------|
+| code | true | string | 请求处理结果 | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息 |                |
+| data | true | object | 指数K线图  |                |
 
 接口访问示例：https://api.chainext.io/v1/kchart?id=4&grouping=1D&tstart=1530316800&tend=1531983011
 
@@ -334,11 +336,11 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |指数CID与指数名称数据|      |
+| 参数名称 | 是否必须 | 数据类型   | 描述           | 取值范围           |
+|------|------|--------|--------------|----------------|
+| code | true | string | 请求处理结果       | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息       |                |
+| data | true | object | 指数CID与指数名称数据 |                |
 
 接口访问示例：https://api.chainext.io/v1/mapping_list
 
@@ -366,11 +368,11 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |单币CID与单币名称数据|      |
+| 参数名称 | 是否必须 | 数据类型   | 描述           | 取值范围           |
+|------|------|--------|--------------|----------------|
+| code | true | string | 请求处理结果       | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息       |                |
+| data | true | object | 单币CID与单币名称数据 |                |
 
 接口访问示例：https://api.chainext.io/v1/coin_mapping_list
 
@@ -393,19 +395,19 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 请求参数:
 
-| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| id      | true  | integer | 见单币CID映射表 | ||
-| date      | true  | string | 查询日期，格式 2018-07-24 | ||
+| 参数名称 | 是否必须 | 类型      | 描述                 | 默认值 | 取值范围 |
+|------|------|---------|--------------------|-----|------|
+| id   | true | integer | 见单币CID映射表          |     |      |
+| date | true | string  | 查询日期，格式 2018-07-24 |     |      |
 
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |代币大额转账报警信息|      |
+| 参数名称 | 是否必须 | 数据类型   | 描述         | 取值范围           |
+|------|------|--------|------------|----------------|
+| code | true | string | 请求处理结果     | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息     |                |
+| data | true | object | 代币大额转账报警信息 |                |
 
 接口访问示例1：https://api.chainext.io/v1/largement_alert?id=0
 
@@ -429,22 +431,116 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 }
 ```
 
-## 情绪指数列表 <span id="v1/mood_indices"> GET /mood_indices 获取情绪指数列表
+
+
+## 单种代币大额转账详细信息 <span id="v1/largement_alert_new"> GET /largement_alert_new 单种代币大额转账详细信息
 
 请求参数:
 
-| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| price7       | false  | integer | 是否需要7日数据  | 1 |0，1|
+| 参数名称 | 是否必须  | 类型      | 描述        | 默认值 | 取值范围 |
+|------|-------|---------|-----------|-----|------|
+| id   | false | integer | 见单币CID映射表 | 0   |      |
 
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |情绪指数列表|      |
+| 参数名称 | 是否必须 | 数据类型   | 描述         | 取值范围           |
+|------|------|--------|------------|----------------|
+| code | true | string | 请求处理结果     | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息     |                |
+| data | true | object | 代币大额转账报警信息 |                |
+
+接口访问示例1：https://api.chainext.io/v1/largement_alert_new?id=0
+
+返回数据示例: 
+```json
+{
+  "code": 1000,
+  "msg": "",
+  "data": [
+    {
+      "id": 596076,
+      "date": "2019-09-05 10:02:21",
+      "level": 2,
+      "money": 2444.65,
+      "fee": 0.00001892,
+      "tx_add": "fe0fa5aa820e7da5a0e6ae644e74f1f26dc4b5cdb8cac29a3cd2cd115f277d25",
+      "payer_owner": null,
+      "payee_owner": [
+        null
+        ],
+      "CID": 0,
+      "is_con": 1,
+      "tx_url": "https://www.blockchain.com/btc/tx/fe0fa5aa820e7da5a0e6ae644e74f1f26dc4b5cdb8cac29a3cd2cd115f277d25"
+    }
+  ]
+}
+```
+
+
+
+## 单种代币大额转账详细信息 <span id="v1/largement_alert_all"> GET /largement_alert_all 单种代币大额转账详细信息
+
+请求参数:
+
+| 参数名称 | 是否必须  | 类型      | 描述     | 默认值  | 取值范围 |
+|------|-------|---------|--------|------|------|
+| num  | false | integer | 返回信息数量 | 1000 |      |
+
+
+
+响应数据: 
+
+| 参数名称 | 是否必须 | 数据类型   | 描述         | 取值范围           |
+|------|------|--------|------------|----------------|
+| code | true | string | 请求处理结果     | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息     |                |
+| data | true | object | 代币大额转账报警信息 |                |
+
+接口访问示例1：https://api.chainext.io/v1/largement_alert_all?num=1
+
+返回数据示例: 
+```json
+{
+  "msg": "",
+  "updated_time": 1567682554,
+  "code": 1000,
+  "data": [
+    {
+      "id": 596237,
+      "date": "2019-09-05 11:18:29",
+      "level": 2,
+      "money": 747,
+      "fee": 0.00183124,
+      "tx_add": "0xbe6746e2c176f1bf713e7e4ba178292190acd51bba06e47f25b1bcd23e1e59ef",
+      "payer_owner": "富豪榜排名:30",
+      "payee_owner": [
+        null
+        ],
+      "CID": 27,
+      "is_con": 1
+    }
+  ]
+}
+```
+
+
+## 情绪指数列表 <span id="v1/mood_indices"> GET /mood_indices 获取情绪指数列表
+
+请求参数:
+
+| 参数名称   | 是否必须  | 类型      | 描述       | 默认值 | 取值范围 |
+|--------|-------|---------|----------|-----|------|
+| price7 | false | integer | 是否需要7日数据 | 1   | 0，1  |
+
+
+响应数据: 
+
+| 参数名称 | 是否必须 | 数据类型   | 描述     | 取值范围           |
+|------|------|--------|--------|----------------|
+| code | true | string | 请求处理结果 | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息 |                |
+| data | true | object | 情绪指数列表 |                |
 
 接口访问示例1：https://api.chainext.io/v1/mood_indices
 
@@ -511,18 +607,18 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 请求参数:
 
-| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| id      | true  | integer | 情绪指数CID | ||
+| 参数名称 | 是否必须 | 类型      | 描述      | 默认值 | 取值范围 |
+|------|------|---------|---------|-----|------|
+| id   | true | integer | 情绪指数CID |     |      |
 
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |日期|      |
+| 参数名称 | 是否必须 | 数据类型   | 描述     | 取值范围           |
+|------|------|--------|--------|----------------|
+| code | true | string | 请求处理结果 | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息 |                |
+| data | true | object | 日期     |                |
 
 接口访问示例1：https://api.chainext.io/v1/mood_index
 
@@ -551,20 +647,20 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 ## 价格基准指数列表 <span id="v1/coinlistt"> GET /coinlist获取价格基准指数列表
 请求参数: 
 
-| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| page       | true  | integer | 页码 | 1 |由指数数量决定|
-| page_size       | true  | integer | 每页数量  | 20 |由指数数量决定|
-| price7       | false  | integer | 是否需要7日数据  | 1 |0，1|
+| 参数名称      | 是否必须  | 类型      | 描述       | 默认值 | 取值范围    |
+|-----------|-------|---------|----------|-----|---------|
+| page      | true  | integer | 页码       | 1   | 由指数数量决定 |
+| page_size | true  | integer | 每页数量     | 20  | 由指数数量决定 |
+| price7    | false | integer | 是否需要7日数据 | 1   | 0，1     |
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |指数列表数据|      |
-| updated_time| true | string |数据更新时间|      |
+| 参数名称         | 是否必须 | 数据类型   | 描述     | 取值范围           |
+|--------------|------|--------|--------|----------------|
+| code         | true | string | 请求处理结果 | 1000,1001,1002 |
+| msg          | true | string | 相关处理信息 |                |
+| data         | true | object | 指数列表数据 |                |
+| updated_time | true | string | 数据更新时间 |                |
 
 接口访问示例1：https://api.chainext.io/v1/coinlist?page=1&page_size=10
 
@@ -628,19 +724,19 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 请求参数:
 
-| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| id       | true  | integer | 指数CID | 1 |指数范围内|
-| tstart       | false  | integer | 开始时间 | |Unix时间戳（单位：秒，例如：1530691531）|
-| tend       | false  | integer | 结束时间 | |Unix时间戳（单位：秒，例如：1530691531）|
+| 参数名称   | 是否必须  | 类型      | 描述    | 默认值 | 取值范围                        |
+|--------|-------|---------|-------|-----|-----------------------------|
+| id     | true  | integer | 指数CID | 1   | 指数范围内                       |
+| tstart | false | integer | 开始时间  |     | Unix时间戳（单位：秒，例如：1530691531） |
+| tend   | false | integer | 结束时间  |     | Unix时间戳（单位：秒，例如：1530691531） |
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |指数表现相关数据|      |
+| 参数名称 | 是否必须 | 数据类型   | 描述       | 取值范围           |
+|------|------|--------|----------|----------------|
+| code | true | string | 请求处理结果   | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息   |                |
+| data | true | object | 指数表现相关数据 |                |
 
 接口访问示例：https://api.chainext.io/v1/coin_detail?id=0
 
@@ -671,17 +767,17 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 请求参数:
 
-| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| id       | false  | integer | 指数CID |  |指数范围内|
+| 参数名称 | 是否必须  | 类型      | 描述    | 默认值 | 取值范围  |
+|------|-------|---------|-------|-----|-------|
+| id   | false | integer | 指数CID |     | 指数范围内 |
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |单币最新价格相关数据|      |
+| 参数名称 | 是否必须 | 数据类型   | 描述         | 取值范围           |
+|------|------|--------|------------|----------------|
+| code | true | string | 请求处理结果     | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息     |                |
+| data | true | object | 单币最新价格相关数据 |                |
 
 接口访问示例：https://api.chainext.cn/v1/coin_list_all?id=0
 
@@ -705,19 +801,19 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 请求参数:
 
-| 参数名称 | 是否必须  | 类型     | 描述  | 默认值   | 取值范围  |
-| ------------ | ----- | ------ | ----- | ----- | ------- |
-| index_id     | false  | integer | 指数CID | 13 |指数范围内|
-| tstart       | false | integer | 开始时间 |  当前时间  | Unix时间戳（单位：秒，例如：1530691531)|
-| tend         | false  | integer | 结束时间 | 当前时间 - 24h  | Unix时间戳（单位：秒，例如：1530691531）| 
+| 参数名称     | 是否必须  | 类型      | 描述    | 默认值        | 取值范围                        |
+|----------|-------|---------|-------|------------|-----------------------------|
+| index_id | false | integer | 指数CID | 13         | 指数范围内                       |
+| tstart   | false | integer | 开始时间  | 当前时间       | Unix时间戳（单位：秒，例如：1530691531) |
+| tend     | false | integer | 结束时间  | 当前时间 - 24h | Unix时间戳（单位：秒，例如：1530691531） |
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |单币最新价格相关数据|      |
+| 参数名称 | 是否必须 | 数据类型   | 描述         | 取值范围           |
+|------|------|--------|------------|----------------|
+| code | true | string | 请求处理结果     | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息     |                |
+| data | true | object | 单币最新价格相关数据 |                |
 
 接口访问示例：https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}&index_id=297&tstart=1558960800&tend=1559025600
 
@@ -725,17 +821,17 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 现有稳定币
 
-| 币种名称              | CID  | 官网页面 |
-| -------------------- | ---- | --------------------- |
+| 币种名称                 | CID  | 官网页面                        |
+|----------------------|------|-----------------------------|
 | bitUSD               | 351  | http://bit.ly/BitShares_USD |
-| Dai                  | 297  | https://makerdao.com/ |
-| Gemini Dollar        | 1929 | https://gemini.com/dollar/ |
-| Paxos Standard Token | 1927 | https://www.paxos.com/pax/ |
-| sUSD                 | 1968 | https://www.synthetix.io/ |
-| Tether               | 13   | https://tether.to/ |
+| Dai                  | 297  | https://makerdao.com/       |
+| Gemini Dollar        | 1929 | https://gemini.com/dollar/  |
+| Paxos Standard Token | 1927 | https://www.paxos.com/pax/  |
+| sUSD                 | 1968 | https://www.synthetix.io/   |
+| Tether               | 13   | https://tether.to/          |
 | TrueUSD              | 481  | https://www.trusttoken.com/ |
-| USD Coin             | 1928 | https://www.centre.io/usdc |
-| USDCoin              | 1969 | https://www.usc.us/ |
+| USD Coin             | 1928 | https://www.centre.io/usdc  |
+| USDCoin              | 1969 | https://www.usc.us/         |
 
 
 返回数据示例: 
@@ -783,12 +879,12 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 响应数据: 
 
-| 参数名称   | 是否必须 | 数据类型   | 描述   | 取值范围   |
-| ------ | ---- | ------ | ----------- | ------ |
-| code | true | string | 请求处理结果    |1000,1001,1002|
-| msg     | true | string |相关处理信息|    |
-| data   | true | object |单币最新价格相关数据|      |
-| updated_time| true | string |数据更新时间|      |
+| 参数名称         | 是否必须 | 数据类型   | 描述         | 取值范围           |
+|--------------|------|--------|------------|----------------|
+| code         | true | string | 请求处理结果     | 1000,1001,1002 |
+| msg          | true | string | 相关处理信息     |                |
+| data         | true | object | 单币最新价格相关数据 |                |
+| updated_time | true | string | 数据更新时间     |                |
 
 接口访问示例：https://api.chainext.io/v1/index_realtime
 
@@ -822,8 +918,9 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 
 ## code返回类型
 
-| code | msg |  含义 |
-| :-: | :-: | :-: |
-|1000 | "" | 返回成功 | 
-|1001 | "data not ready" | 没有返回数据 | 
-|1002 | "wrong parameter" | 输入参数有误 | 
+| code | msg               | 含义     |
+|------|-------------------|--------|
+| :-:  | :-:               | :-:    |
+| 1000 | ""                | 返回成功   |
+| 1001 | "data not ready"  | 没有返回数据 |
+| 1002 | "wrong parameter" | 输入参数有误 |
