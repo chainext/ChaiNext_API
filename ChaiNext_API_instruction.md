@@ -23,27 +23,42 @@ users in China: [https://api.chainext.cn/v1](https://api.chainext.io/v1)
 otherwise: [https://api.chainext.io/v1](https://api.chainext.io/v1)
 
 ## API Detailed Instruction 
-| Data Type                           | Method                                                                                    | type | Description                                                                            |
-|-------------------------------------|-------------------------------------------------------------------------------------------|------|----------------------------------------------------------------------------------------|
-| Basic indices market information    | [https://api.chainext.io/v1/index_basic](#basic-index-performance--get-index_basic)       | GET  | Get basic market information of indices                                                |
-| Weight                              | [https://api.chainext.io/v1/weight](##coin-weight-of-index--get-weight)                   | GET  | Get weight coefficient of coins in indices                                             |
-| Index list                          | [https://api.chainext.io/v1/index_list](#index-list--get-index_list)                      | GET  | get index list                                                                         |
-| Index performance                   | [https://api.chainext.io/v1/index_detail](#index-performance--get-index_detail)           | GET  | Get index performance under stated period of time                                      |
-| get chainext k chart in tradingview | [https://chainext.cn/tradingview](#get-chainext-k-chart-in-tradingview)                   | GET  | get chainext k chart in tradingview                                                    |
-| Candlestick chart                   | [https://api.chainext.io/v1/kchart](#index-candlestick-chart--get-kchart)                 | GET  | get candlestick chart of CSI indices                                                   |
-| Mapping list                        | [https://api.chainext.io/v1/mapping_list](#index-mapping-list--get-mapping_list)          | GET  | Get mapping list between CSI indices' CID and their names                              |
-| Coin mapping list                   | [https://api.chainext.io/v1/coin_mapping_list](#coin-mapping-list--get-coin_mapping_list) | GET  | Get mapping list between coins' CID and their names                                    |
-| Coin transfer alert information     | [https://api.chainext.io/v1/largement_alert](#coin-transfer-alert--get-largement_alert)   | GET  | get coin transfer alert information                                                    |
-| Selected coin transfer alert detailed information | [https://api.chainext.io/v1/largement_alert_new](#Selected-coin-transfer-alert-detailed-information)   | GET  | get the latest 100 pieces of detailed transfer alert information of selected coin|
-| All coins transfer alert detailed information| [https://api.chainext.io/v1/largement_alert_all](#All-coins-transfer-alert-detailed-information)   | GET  |  get detailed transfer alert information of all available coins|
-| Sentiment Indices List              | [https://api.chainext.io/v1/mood_indices](#sentiment-indices-list--get-mood_indices)      | GET  | get sentiment indices list, currently including BTC Bubble Index and USDT Index        |
-| Sentiment Indices Performance       | [https://api.chainext.io/v1/mood_index](#sentiment-indices-performance--get-mood_index)   | GET  | get sentiment indices performance, currently including BTC Bubble Index and USDT Index |
-| Coin Indices List                   | [https://api.chainext.io/v1/coinlist](#coin-indices-list--get-coinlist)                   | GET  | get coin indices list, currently including top 100 cryptocurrencies                    |
-| Coin Indices Performance            | [https://api.chainext.io/v1/coin_detail](#coin-indices-performance--get-coin_detail)      | GET  | get coin indices performance, currently including top 100 cryptocurrencies             |
-| Last Coin Index                     | [https://api.chainext.cn/v1/coin_list_all](#last-coin-index--get-coin_list_all)           | GET  | get crypocurrencies realtime price, including most of the cryptocurrencies             |
-| Stable Coin Index                   | [https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}](#stable-coin-index--get-pegged)      | GET  | get stable currency price and volume history                                           |
-| Last Index                          | [https://api.chainext.io/v1/index_realtime](#last-index--get-index_realtime)              | GET  | get index realtime data, including price, marketCap and turnover                       |
 
+
+### V1 API
+
+| Data Type                                         | Method                                                                                               | type | Description                                                                            |
+|---------------------------------------------------|------------------------------------------------------------------------------------------------------|------|----------------------------------------------------------------------------------------|
+| Basic indices market information                  | [https://api.chainext.io/v1/index_basic](#basic-index-performance--get-index_basic)                  | GET  | Get basic market information of indices                                                |
+| Weight                                            | [https://api.chainext.io/v1/weight](##coin-weight-of-index--get-weight)                              | GET  | Get weight coefficient of coins in indices                                             |
+| Index list                                        | [https://api.chainext.io/v1/index_list](#index-list--get-index_list)                                 | GET  | get index list                                                                         |
+| Index performance                                 | [https://api.chainext.io/v1/index_detail](#index-performance--get-index_detail)                      | GET  | Get index performance under stated period of time                                      |
+| get chainext k chart in tradingview               | [https://chainext.cn/tradingview](#get-chainext-k-chart-in-tradingview)                              | GET  | get chainext k chart in tradingview                                                    |
+| Candlestick chart                                 | [https://api.chainext.io/v1/kchart](#index-candlestick-chart--get-kchart)                            | GET  | get candlestick chart of CSI indices                                                   |
+| Mapping list                                      | [https://api.chainext.io/v1/mapping_list](#index-mapping-list--get-mapping_list)                     | GET  | Get mapping list between CSI indices' CID and their names                              |
+| Coin mapping list                                 | [https://api.chainext.io/v1/coin_mapping_list](#coin-mapping-list--get-coin_mapping_list)            | GET  | Get mapping list between coins' CID and their names                                    |
+| Coin transfer alert information                   | [https://api.chainext.io/v1/largement_alert](#coin-transfer-alert--get-largement_alert)              | GET  | get coin transfer alert information                                                    |
+| Selected coin transfer alert detailed information | [https://api.chainext.io/v1/largement_alert_new](#Selected-coin-transfer-alert-detailed-information) | GET  | get the latest 100 pieces of detailed transfer alert information of selected coin      |
+| All coins transfer alert detailed information     | [https://api.chainext.io/v1/largement_alert_all](#All-coins-transfer-alert-detailed-information)     | GET  | get detailed transfer alert information of all available coins                         |
+| Sentiment Indices List                            | [https://api.chainext.io/v1/mood_indices](#sentiment-indices-list--get-mood_indices)                 | GET  | get sentiment indices list, currently including BTC Bubble Index and USDT Index        |
+| Sentiment Indices Performance                     | [https://api.chainext.io/v1/mood_index](#sentiment-indices-performance--get-mood_index)              | GET  | get sentiment indices performance, currently including BTC Bubble Index and USDT Index |
+| Coin Indices List                                 | [https://api.chainext.io/v1/coinlist](#coin-indices-list--get-coinlist)                              | GET  | get coin indices list, currently including top 100 cryptocurrencies                    |
+| Coin Indices Performance                          | [https://api.chainext.io/v1/coin_detail](#coin-indices-performance--get-coin_detail)                 | GET  | get coin indices performance, currently including top 100 cryptocurrencies             |
+| Last Coin Index                                   | [https://api.chainext.cn/v1/coin_list_all](#last-coin-index--get-coin_list_all)                      | GET  | get crypocurrencies realtime price, including most of the cryptocurrencies             |
+| Stable Coin Index                                 | [https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}](#stable-coin-index--get-pegged)                 | GET  | get stable currency price and volume history                                           |
+| Last Index                                        | [https://api.chainext.io/v1/index_realtime](#last-index--get-index_realtime)                         | GET  | get index realtime data, including price, marketCap and turnover                       |
+
+### V2 API
+
+* All `'csi'` in  `'index_code'` of v2 API will be changed into `'ChaiNext'`
+
+
+| Data Type                        | Method                                                                              | type | Description                                                      |
+|----------------------------------|-------------------------------------------------------------------------------------|------|------------------------------------------------------------------|
+| Basic indices market information | [https://api.chainext.io/v2/index_basic](#basic-index-performance--get-index_basic) | GET  | Get basic market information of indices                          |
+| Mapping list                     | [https://api.chainext.io/v2/mapping_list](#index-mapping-list--get-mapping_list)    | GET  | Get mapping list between CSI indices' CID and their names        |
+| Index list                       | [https://api.chainext.io/v2/index_list](#index-list--get-index_list)                | GET  | get index list                                                   |
+| Last Index                       | [https://api.chainext.io/v2/index_realtime](#last-index--get-index_realtime)        | GET  | get index realtime data, including price, marketCap and turnover |
 
 
 ## Basic Index Performance <span id="v1/index_basic"> GET /index_basic
@@ -390,14 +405,14 @@ Response example:
 Request parameters:
 
 | Name | Required | Type    | Description | Default | Range |
-| ---- | -------- | ------- | ----------- | ------- | ----- |
+|------|----------|---------|-------------|---------|-------|
 | id   | false    | integer | coin CID    | 0       |       |
 
 
 Response: 
 
 | Name | Required | Type   | Description         | Range          |
-| ---- | -------- | ------ | ------------------- | -------------- |
+|------|----------|--------|---------------------|----------------|
 | code | true     | string | response result     | 1000,1001,1002 |
 | msg  | true     | string | related message     |                |
 | data | true     | object | coin transfer alert |                |
@@ -434,13 +449,13 @@ Response example:
 Request parameters:
 
 | Name | Required | Type    | Description                    | Default | Range |
-| ---- | -------- | ------- | ------------------------------ | ------- | ----- |
+|------|----------|---------|--------------------------------|---------|-------|
 | num  | false    | integer | number of returned information | 1000    |       |
 
 Response: 
 
 | Name | Required | Type   | Description         | Range          |
-| ---- | -------- | ------ | ------------------- | -------------- |
+|------|----------|--------|---------------------|----------------|
 | code | true     | string | response result     | 1000,1001,1002 |
 | msg  | true     | string | related message     |                |
 | data | true     | object | coin transfer alert |                |
@@ -860,10 +875,191 @@ Response example:
 }
 ```
 
+## V2 API Introduction
+
+## Basic Index Performance <span id="v2/index_basic"> GET /index_basic
+Request parameters: 
+
+| Name | Required | Type   | Description             | Default | Range |
+|------|----------|--------|-------------------------|---------|-------|
+| id   | true     | string | index CID or index name | 1       |       |
+
+Response: 
+
+| Name         | Required | Type   | Description                  | Range          |
+|--------------|----------|--------|------------------------------|----------------|
+| code         | true     | string | response result              | 1000,1001,1002 |
+| msg          | true     | string | related message              |                |
+| data         | true     | object | basic index performance data |                |
+| updated_time | true     | string | data update time             |                |
+
+API access example：https://api.chainext.io/v2/index_basic?id=1
+
+Response example: 
+```
+  {
+  "code": 1000,
+  "msg": "",
+  "data": {
+    "download": [
+        {
+          "name": "编制方案",
+          "url": "https://chainext.oss-cn-hongkong.aliyuncs.com/doc/20180626/BZFA.pdf"
+        },
+        {
+          "name": "指数单张",
+          "url": "https://chainext.oss-cn-hongkong.aliyuncs.com/doc/20180626/CSI10X_ZSDZ.pdf"
+        }
+    ],
+    "related": [],
+    "abstract": "CSI 10X指数由CSI 10指数样本剔除比特币后组成，反映除比特币以外的代币市场大盘币种的价格走势",
+    "index_symbol": "ChaiNext10X",
+    "latest": {
+    "marketcap": 45660778158,
+    "changes": 2.7559325955,
+    "change_abs": 43.2737310555587,
+    "turnover_24h": 14900829929.014524,
+    "change_utc0": -0.0182570438,
+    "lastprice": 1613.4765410035984,
+    "change_abs_utc0": -0.294626908624
+    }
+  },
+  "updated_time": 1530690774.3714838
+}
+```
+
+## Index List <span id="v2/index_list"> GET /index_list
+Request parameters:
+
+| Name      | Required | Type    | Description | Default | Range |
+|-----------|----------|---------|-------------|---------|-------|
+| page      | true     | integer | page        | 1       |       |
+| page_size | true     | integer | page size   | 20      |       |
+
+Response:
+
+| Name         | Required | Type   | Description      | Range          |
+|--------------|----------|--------|------------------|----------------|
+| code         | true     | string | response result  | 1000,1001,1002 |
+| msg          | true     | string | related message  |                |
+| data         | true     | object | index list data  |                |
+| updated_time | true     | string | data update time |                |
+
+API access example：https://api.chainext.io/v2/index_list?page=1&page_size=20
+
+Response example: 
+```
+  {
+  "code": 1000,
+  "msg": "",
+  "data": {
+    "total": 20,
+    "current_page": 1,
+    "data": [
+              {
+                "symbol": "ChaiNext10X",
+                "id": "ChaiNext10X",
+                "full_name_en": "ChaiNext Large Cap index no BTC",
+                "full_name_zh": "ChaiNext大盘规模指数NoBTC",
+                "24h_max": 4986.09,
+                "24h_min": 4554.08,
+                "latest": 4581.11,
+                "change": -3.9420954984864633,
+                "change_abs": -40.37099999999987,
+                "turnover": 5167595300,
+                "component_num": 100,
+                "marketcap": 246780275125.75586,
+                "price7": [
+                  1116.12,
+                  1119.31,
+                  ...
+                ],
+                "hot": 10000
+              }
+            ]
+          }
+        }
+```
+
+## Index Mapping List <span id="v2/mapping_list"> GET /mapping_list
+
+Request parameters:
+
+None.
+
+Response: 
+
+| Name | Required | Type   | Description              | Range          |
+|------|----------|--------|--------------------------|----------------|
+| code | true     | string | response result          | 1000,1001,1002 |
+| msg  | true     | string | related message          |                |
+| data | true     | object | index CID and index name |                |
+
+API access example：https://api.chainext.io/v2/mapping_list
+
+Response example: 
+```
+  {
+  "code": 1000,
+  "msg": "",
+  "data": {
+    "CID": {
+      "index_CID": 1,
+      "index_code": "ChaiNext10X",
+      "index_name_ch": "ChaiNext大盘规模指数NoBTC"
+    }
+  }
+```
+
+
+## Last Index  <span id="v2/index_realtime"> GET /index_realtime
+
+Request parameters:
+
+null
+
+Responce: 
+
+| Name         | Required | Type   | Description          | Range          |
+|--------------|----------|--------|----------------------|----------------|
+| code         | true     | string | response result      | 1000,1001,1002 |
+| msg          | true     | string | related message      |                |
+| data         | true     | object | last coin price data |                |
+| updated_time | true     | string | data updating time   |                |
+
+API access example：https://api.chainext.io/v2/index_realtime
+
+Response example: 
+```
+{
+  "msg": "",
+  "updated_time": 1562214072,
+  "code": 1000,
+  "data": [
+    {
+      "indexId": 1,
+      "indexCode": "ChaiNext10X",
+      "lastPrice": "2946.522825168813849624789268",
+      "marketCap": "82096273083.3017056",
+      "turnover": "21128649724.115504",
+      "updateTime": 1562214069
+    },
+    {
+      "indexId": 2,
+      "indexCode": "ChaiNext10X",
+      "lastPrice": "1107.532109466394737066796435",
+      "marketCap": "293119075844.4470656",
+      "turnover": "49807628976.405104",
+      "updateTime": 1562214069
+    },
+    ...
+  ]
+}
+```
+
 ## code return type
 
 | code | msg               | type                                    |
-|------|-------------------|-----------------------------------------|
 | :-:  | :-:               | :-:                                     |
 | 1000 | ""                | success                                 |
 | 1001 | "data not ready"  | no data                                 |

@@ -33,6 +33,9 @@ API访问地址：
 RSS链接：https://doc.chainext.cn/feed/ 或者 https://doc.chainext.io/feed/
 
 ## API 接口说明
+
+### v1版本API接口说明
+
 | 接口数据类型                    | 请求方法                                                                                                    | 类型  | 描述                                    |
 |---------------------------|---------------------------------------------------------------------------------------------------------|-----|---------------------------------------|
 | 基本指数行情                    | [https://api.chainext.io/v1/index_basic](#基本指数行情)                                                       | GET | 获取指数的基本行情                             |
@@ -53,6 +56,17 @@ RSS链接：https://doc.chainext.cn/feed/ 或者 https://doc.chainext.io/feed/
 | 单币最新价格列表                  | [https://api.chainext.cn/v1/coin_list_all](#单币最新价格列表--get-coin_list_all-获取单币最新价格列表)                     | GET | 获取数字货币的实时最新价格，有市场上大多数数字货币的实时最新价格      |
 | 稳定币指数                     | [https://vipapi.chainext.cn/v1/pegged?Fkey={apikey}](#稳定币数据--get-pegged-获取稳定币数据)                        | GET | 获取稳定币历史数据                             |
 | 指数最新数据列表                  | [https://api.chainext.cn/v1/index_realtime](#指数最新数据列表--get-index_realtime-获取所有指数最新数据)                   | GET | 获取指数最新数据                              |
+
+### v2版本API 接口说明
+
+* v2 API的`index_code`中所有`csi`改为`ChaiNext`
+
+| 接口数据类型   | 请求方法                                                                                               | 类型  | 描述                |
+|----------|----------------------------------------------------------------------------------------------------|-----|-------------------|
+| 基本指数行情   | [https://api.chainext.io/v2/index_basic](#基本指数行情)                                                  | GET | 获取指数的基本行情         |
+| 指数CID映射表 | [https://api.chainext.io/v2/mapping_list](#单币cid与指数名称对应表--get-coin_mapping_list-获取单币cid与单币名称的相关说明) | GET | 获取指数CID与指数名称的相关说明 |
+| 指数最新数据列表 | [https://api.chainext.cn/v2/index_realtime](#指数最新数据列表--get-index_realtime-获取所有指数最新数据)              | GET | 获取指数最新数据          |
+| 通证指数列表   | [https://api.chainext.io/v2/index_list](#通证指数列表信息--get-index_list-获取通证指数列表信息)                      | GET | 获取通证指数列表信息        |
 
 ### 基本指数行情 <span id="v1/index_basic"> GET /index_basic 获取基本指数行情
 请求参数: 
@@ -916,10 +930,234 @@ https://chainext.cn/tradingview  是我们CSI指数实现的标准UDF，您向tr
 }
 ```
 
+
+## v2 版本API
+
+## 基本指数行情 <span id="v2/index_basic"> GET /index_basic 获取基本指数行情
+请求参数: 
+
+| 参数名称 | 是否必须 | 类型     | 描述         | 默认值 | 取值范围       |
+|------|------|--------|------------|-----|------------|
+| id   | true | string | 指数CID或指数名称 | 1   | 由指数CID范围决定 |
+
+响应数据: 
+
+| 参数名称         | 是否必须 | 数据类型   | 描述       | 取值范围           |
+|--------------|------|--------|----------|----------------|
+| code         | true | string | 请求处理结果   | 1000,1001,1002 |
+| msg          | true | string | 相关处理信息   |                |
+| data         | true | object | 基本指数行情数据 |                |
+| updated_time | true | string | 数据更新时间   |                |
+
+接口访问示例：https://api.chainext.io/v2/index_basic?id=1
+
+返回数据示例: 
+```
+  {
+  "code": 1000,
+  "msg": "",
+  "data": {
+    "download": [
+        {
+          "name": "编制方案",
+          "url": "https://chainext.oss-cn-hongkong.aliyuncs.com/doc/20180626/BZFA.pdf"
+        },
+        {
+          "name": "指数单张",
+          "url": "https://chainext.oss-cn-hongkong.aliyuncs.com/doc/20180626/CSI10X_ZSDZ.pdf"
+        }
+    ],
+    "related": [],
+    "abstract": "CSI 10X指数由CSI 10指数样本剔除比特币后组成，反映除比特币以外的代币市场大盘币种的价格走势",
+    "index_symbol": "ChaiNext10X",
+    "latest": {
+    "marketcap": 45660778158,
+    "changes": 2.7559325955,
+    "change_abs": 43.2737310555587,
+    "turnover_24h": 14900829929.014524,
+    "change_utc0": -0.0182570438,
+    "lastprice": 1613.4765410035984,
+    "change_abs_utc0": -0.294626908624
+    }
+  },
+  "updated_time": 1530690774.3714838
+}
+```
+
+
+## 指数CID与指数名称对应表 <span id="v2/mapping_list"> GET /mapping_list 获取指数CID与指数名称的相关说明
+
+请求参数:
+
+无。
+
+响应数据: 
+
+| 参数名称 | 是否必须 | 数据类型   | 描述           | 取值范围           |
+|------|------|--------|--------------|----------------|
+| code | true | string | 请求处理结果       | 1000,1001,1002 |
+| msg  | true | string | 相关处理信息       |                |
+| data | true | object | 指数CID与指数名称数据 |                |
+
+接口访问示例：https://api.chainext.io/v2/mapping_list
+
+返回数据示例: 
+```
+  {
+  "code": 1000,
+  "msg": "",
+  "data": {
+    "CID": {
+      "index_CID": 1,
+      "index_code": "ChaiNext10X",
+      "index_name_ch": "ChaiNext大盘规模指数NoBTC"
+    }
+  }
+```
+
+
+
+
+## 指数最新数据列表 <span id="v2/index_realtime"> GET /index_realtime 获取所有指数最新数据
+
+
+
+请求参数:
+
+无
+
+响应数据: 
+
+| 参数名称         | 是否必须 | 数据类型   | 描述         | 取值范围           |
+|--------------|------|--------|------------|----------------|
+| code         | true | string | 请求处理结果     | 1000,1001,1002 |
+| msg          | true | string | 相关处理信息     |                |
+| data         | true | object | 单币最新价格相关数据 |                |
+| updated_time | true | string | 数据更新时间     |                |
+
+接口访问示例：https://api.chainext.io/v2/index_realtime
+
+返回数据示例: 
+```
+{
+  "msg": "",
+  "updated_time": 1562214072,
+  "code": 1000,
+  "data": [
+    {
+      "indexId": 1,
+      "indexCode": "ChaiNext10X",
+      "lastPrice": "2946.522825168813849624789268",
+      "marketCap": "82096273083.3017056",
+      "turnover": "21128649724.115504",
+      "updateTime": 1562214069
+    },
+    {
+      "indexId": 2,
+      "indexCode": "ChaiNext10",
+      "lastPrice": "1107.532109466394737066796435",
+      "marketCap": "293119075844.4470656",
+      "turnover": "49807628976.405104",
+      "updateTime": 1562214069
+    },
+    ...
+  ]
+}
+```
+
+
+## 通证指数列表信息 <span id="v2/index_list"> GET /index_list 获取通证指数列表信息
+请求参数: 
+
+| 参数名称      | 是否必须  | 类型      | 描述       | 默认值 | 取值范围    |
+|-----------|-------|---------|----------|-----|---------|
+| page      | true  | integer | 页码       | 1   | 由指数数量决定 |
+| page_size | true  | integer | 每页数量     | 20  | 由指数数量决定 |
+| price7    | false | integer | 是否需要7日数据 | 1   | 0，1     |
+
+响应数据: 
+
+| 参数名称         | 是否必须 | 数据类型   | 描述     | 取值范围           |
+|--------------|------|--------|--------|----------------|
+| code         | true | string | 请求处理结果 | 1000,1001,1002 |
+| msg          | true | string | 相关处理信息 |                |
+| data         | true | object | 指数列表数据 |                |
+| updated_time | true | string | 数据更新时间 |                |
+
+接口访问示例1：https://api.chainext.io/v2/index_list?page=1&page_size=20
+
+返回数据示例1: 
+```
+  {
+  "code": 1000,
+  "msg": "",
+  "data": {
+    "total": 20,
+    "current_page": 1,
+    "data": [
+              {
+                "symbol": "ChaiNext10X",
+                "id": "ChaiNext10X",
+                "full_name_en": "ChaiNext Large Cap index no BTC",
+                "full_name_zh": "ChaiNext大盘规模指数NoBTC",
+                "24h_max": 4986.09,
+                "24h_min": 4554.08,
+                "latest": 4581.11,
+                "change": -3.9420954984864633,
+                "change_abs": -40.37099999999987,
+                "turnover": 5167595300,
+                "component_num": 100,
+                "marketcap": 246780275125.75586,
+                "price7": [
+                  1116.12,
+                  1119.31,
+                  ...
+                ],
+                "hot": 10000
+              }
+            ]
+          }
+        }
+```
+接口访问示例2：https://api.chainext.io/v2/index_list?page=1&page_size=20&price7=0
+
+返回数据示例2: 
+```
+  {
+  "code": 1000,
+  "msg": "",
+  "data": {
+    "total": 20,
+    "current_page": 1,
+    "data": [
+              {
+                "symbol": "ChaiNext10X",
+                "id": "ChaiNext10X",
+                "full_name_en": "ChaiNext Large Cap index no BTC",
+                "full_name_zh": "ChaiNext大盘规模指数NoBTC",
+                "24h_max": 4986.09,
+                "24h_min": 4554.08,
+                "latest": 4581.11,
+                "change": -3.9420954984864633,
+                "change_abs": -40.37099999999987,
+                "turnover": 5167595300,
+                "component_num": 100,
+                "marketcap": 246780275125.75586,
+                "price7": [],
+                "hot": 10000
+              }
+            ]
+          }
+        }
+```
+
+
+
+
+
 ## code返回类型
 
 | code | msg               | 含义     |
-|------|-------------------|--------|
 | :-:  | :-:               | :-:    |
 | 1000 | ""                | 返回成功   |
 | 1001 | "data not ready"  | 没有返回数据 |
