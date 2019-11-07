@@ -3,6 +3,12 @@
 中文版：[ChaiNext_API说明](https://github.com/chainext/ChaiNext_API/blob/master/ChaiNext_API%E8%AF%B4%E6%98%8E.md)
 english version：[ChaiNext_API_instruction.md](https://github.com/chainext/ChaiNext_API/blob/master/ChaiNext_API_instruction.md)
 
+
+# ChaiNext 更新文档
+
+* [ChaiNext API接口`index_code`字段内容更新公告](./doc/20191107.md)
+
+
 # API接入地址 api interface url
 * normal
   * china mainland ：api.chainext.cn
