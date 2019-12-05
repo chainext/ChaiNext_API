@@ -323,10 +323,10 @@
 
     | 字段名称    |  类型   |              说明               |
     | ----------- | :-----: | :-----------------------------: |
-    | indexId     | Integer |    币种id（对应订阅时的id）     |
-    | lastPrice   | String  |         该币种的symbol          |
-    | marketCap   | String  | 该币种在coinmarketcap上的symbol |
-    | turnover24h | String  |          该币种最新价           |
+    | indexId     | Integer |    指数id（对应订阅时的id）     |
+    | lastPrice   | String  |         该指数的symbol          |
+    | marketCap   | String  | 该指数在coinmarketcap上的symbol |
+    | turnover24h | String  |          该指数最新价           |
     | updateTime  |  Long   |            更新时间             |
 
     indexId对照表请参考https://api.chainext.io/v1/mapping_list
