@@ -324,9 +324,9 @@
     | 字段名称    |  类型   |              说明               |
     | ----------- | :-----: | :-----------------------------: |
     | indexId     | Integer |    指数id（对应订阅时的id）     |
-    | lastPrice   | String  |         该指数的symbol          |
-    | marketCap   | String  | 该指数在coinmarketcap上的symbol |
-    | turnover24h | String  |          该指数最新价           |
+    | lastPrice   | String  |         该指数最新价          |
+    | marketCap   | String  | 该指数市值 |
+    | turnover24h | String  |          该指数24h流通量           |
     | updateTime  |  Long   |            更新时间             |
 
     indexId对照表请参考https://api.chainext.io/v1/mapping_list
@@ -363,9 +363,9 @@
 
 * 可订阅主题
 
-| topic      | 介绍     | 订阅字段 |
-|------------|--------| :------:|
-| coin_index | 单币信息   | id   |
-| pair_index | 单币信息-类型2，测试中  | id   |
-| index      | 大盘指数信息 | id   |
+| topic      | 介绍           | 订阅字段 |
+|------------|--------------|------|
+| coin_index | 单币信息         | id   |
+| pair_index | 单币信息-类型2，测试中 | id   |
+| index      | 大盘指数信息       | id   |
 
