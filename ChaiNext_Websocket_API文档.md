@@ -13,15 +13,16 @@
 
 * 登录方式：
 
-    登录网址1 wss://vipapi.chainext.cn/websocket  (国内访问）
+    登录网址1 wss://vipapi.chainext.cn/websocket  （国内访问）
     
     登陆网址2 wss://vipapi.chainext.io/websocket （国际访问）
+ 
     
     * 发送登录
 
     ```json
     {
-      "op": "login",
+      "op": "login", 
       "args": {
         "signTime": ,
         "apiKey": "",
@@ -330,6 +331,88 @@
     | updateTime  |  Long   |            更新时间             |
 
     indexId对照表请参考https://api.chainext.io/v1/mapping_list
+
+* coin_index_v3
+
+    * 信息样例
+
+    ```json
+    {
+        "op": "coin_index_v3",
+        "args": {
+            "underlyingSymbol": "CSI2-ETH",
+            "underlyingCid": 210002,
+            "quoteSymbol": "USD",
+            "quoteCid": 100000,
+            "price": 135.57500000000000000000,
+            "status": 1,
+            "updateTime": 1578188158000
+        }
+    }
+    ```
+
+    名称|类型|是否必须|备注|其他信息
+    |-|-|-|-|-|
+    underlyingSymbol|string|必须 | 目标币种名称|
+    underlyingCid|integer|必须 | 目标币种CID|
+    quoteSymbol|string|必须 | 计价币种名称|
+    quoteCid|integer|必须 | 计价币种CID|
+    price|number|必须 |单币指数价格|
+    status|integer|必须 |交易所对应的交易对参与计算状态。1:表示启用(正常情况)。2:表示弃用(交易对获取超时)。3:表示禁用(配置表中交易对权重weight配置为0)。4:表示弃用(与其他交易对相差超过阈值，交易对横向过滤法未通过)。5:表示弃用(交易对格式转换时,缺失对应的法币汇率)。6:表示弃用(交易对转换格式不正确)。7:表示弃用(该交易对记录所对应的单币输出结果采用CMC数据)。8:表示弃用(该交易对记录所对应的单币输出结果采用单币插补值数据)。9:表示弃用(该交易对之前某一轮单币计算采用插补值,且被横向过滤剔除后，从未更新数据 。|
+    updateTime|integer|必须 | 结束计算并向外推送的本地机器时间戳(13位时间戳)|
+
+* pair_index_v3
+
+    * 信息样例
+
+    ```json
+    {
+        "op": "pair_index_v3",
+        "args": {
+            "underlyingSymbol": "ETH",
+            "underlyingCid": 1,
+            "quoteSymbol": "USD",
+            "quoteCid": 100000,
+            "price": 136.09593600171444922377,
+            "status": 1,
+            "coinUpdateTime": 1578207030000,
+            "pairInfos": [
+                {
+                    "exchange": "Bibox",
+                    "pairSymbol": "ETH_USDT",
+                    "pairPrice": 0,
+                    "transferredPrice": 0,
+                    "pairSide": "N",
+                    "pairWeight": 0,
+                    "status": 2,
+                    "pairUpdateTime": 0
+                }
+            ]
+        }
+    }
+    ```
+
+    名称|类型|是否必须 |备注|其他信息
+    |-|-|-|-|-|
+    underlyingSymbol|string|必须 | 目标币种名称|
+    underlyingCid|integer|必须 | 目标币种CID|
+    quoteSymbol|string|必须 | 计价币种名称|
+    quoteCid|integer|必须 | 计价币种CID|
+    coinUpdateTime|integer|必须 | 结束计算并向外推送的本地机器时间戳(13位时间戳)|
+    price|number|必须 |单币指数价格|
+    status|integer|必须 |交易所对应的交易对参与计算状态。1:表示启用(正常情况)。2:表示弃用(交易对获取超时)。3:表示禁用(配置表中交易对权重weight配置为0)。4:表示弃用(与其他交易对相差超过阈值，交易对横向过滤法未通过)。5:表示弃用(交易对格式转换时,缺失对应的法币汇率)。6:表示弃用(交易对转换格式不正确)。7:表示弃用(该交易对记录所对应的单币输出结果采用CMC数据)。8:表示弃用(该交易对记录所对应的单币输出结果采用单币插补值数据)。9:表示弃用(该交易对之前某一轮单币计算采用插补值,且被横向过滤剔除后，从未更新数据 。|
+    pairInfos|object []|必须 |用于计算的原始交易对数据json格式|
+    |- exchange|string|必须 |交易所名称|
+    |- pairUpdateTime|integer|必须 |数据投递到kafka的本地机器时间戳(13位时间戳)|
+    |- pairSymbol|string|必须 |原始交易对名称(配置表中的数据)|
+    |- pairPrice|number|必须 |交易对原始价格|
+    |- transferredPrice|number|必须 |用于的计算的交易对价格（交易对格式统一之后的价格）|
+    |- side|string|必须 |主动买卖方向(买入为B，卖出为S,未知N)|
+    |- pairWeight|number|必须 |计算的占用权重占比。(计算规则:此交易对在此次单币计算过程中所占的权重比。例如: pairWeight/activePairWeight)|
+    |- status|integer|必须 |交易所对应的交易对参与计算状态。1:表示启用(正常情况)。2:表示弃用(异常情况:交易对超时、与其他交易对相差超过阈值)。3:表示禁用(配置表中交易对权重weight配置为0)。|
+
+
+
 ### code信息码
 
 * 返回信息
@@ -363,9 +446,11 @@
 
 * 可订阅主题
 
-| topic      | 介绍           | 订阅字段 |
-|------------|--------------|------|
-| coin_index | 单币信息         | id   |
-| pair_index | 单币信息-类型2，测试中 | id   |
-| index      | 大盘指数信息       | id   |
+| topic         | 介绍            | 订阅字段 |
+|---------------|---------------|------|
+| coin_index    | 单币信息          | id   |
+| pair_index    | 单币信息-类型2，测试中  | id   |
+| index         | 大盘指数信息        | id   |
+| coin_index_v3 | 单币信息，v3版本     | id   |
+| pair_index_v3 | 单币信息-类型2，v3版本 | id   |
 
