@@ -442,9 +442,30 @@
     | price               | number  | 必须   |     | 新单币指数价格                               |      |
     | updateTime     | integer | 必须   |     | 新单币指数更新时间\(13位时间戳\)                   |      |
 
-
+* volatility_index_sink
 
 ### code信息码
+
+    * 信息样例
+
+
+    ```json
+    {
+        "op": "volatility_index_sink",
+        "args": {
+            "iid": 300001,
+            "indexValue": 3539.75921241551481617389,
+            "updateTime": 1583287320000
+        }
+    }
+    ```
+
+    | 名称| 类型| 是否必须 | 默认值 | 备注| 其他信息 |
+    |-----|---------|------|-----|-----|------|
+    | iid| integer  | 必须|     | 指数id	 |      |
+    | indexValue| number | 必须|     | 指数数值|      |
+    | updateTime| integer  | 必须|     | 计算结束的13位时间戳|      |
+
 
 * 返回信息
 
@@ -477,12 +498,13 @@
 
 * 可订阅主题
 
-| topic              | 介绍            | 订阅字段 |
-|--------------------|---------------|------|
-| coin_index         | 单币信息          | id   |
-| pair_index         | 单币信息-类型2，测试中  | id   |
-| index              | 大盘指数信息        | id   |
-| coin_index_v3      | 单币信息，v3版本     | id   |
-| pair_index_v3      | 单币信息-类型2，v3版本 | id   |
-| coin_flow_index_v3 | v3单币逐笔计算单币指数  | id   |
+| topic                 | 介绍            | 订阅字段 |
+|-----------------------|---------------|------|
+| coin_index            | 单币信息          | id   |
+| pair_index            | 单币信息-类型2，测试中  | id   |
+| index                 | 大盘指数信息        | id   |
+| coin_index_v3         | 单币信息，v3版本     | id   |
+| pair_index_v3         | 单币信息-类型2，v3版本 | id   |
+| coin_flow_index_v3    | v3单币逐笔计算单币指数  | id   |
+| volatility_index_sink | 波动率指数         | id   |
 
