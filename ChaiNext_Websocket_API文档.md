@@ -444,8 +444,6 @@
 
 * volatility_index_sink
 
-### code信息码
-
     * 信息样例
 
 
@@ -466,6 +464,8 @@
     | indexValue| number | 必须|     | 指数数值|      |
     | updateTime| integer  | 必须|     | 计算结束的13位时间戳|      |
 
+
+### code信息码
 
 * 返回信息
 
